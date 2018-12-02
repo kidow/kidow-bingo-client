@@ -1,10 +1,12 @@
 import React from 'react';
 import './PageWrapper.scss'
+import Header from '../Header/Header';
 
-const PageWrapper = () => {
+const PageWrapper = ({children}) => {
   return (
     <div>
-      
+      <Header />
+      {children}
     </div>
   );
 };

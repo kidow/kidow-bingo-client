@@ -1,0 +1,115 @@
+@import '~lib/styles/utils';
+@import '~lib/styles/shadow';
+@import '~lib/styles/modules';
+
+@mixin center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@mixin link {
+  padding: 1rem;
+  color: $oc-teal-7;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    background: $oc-teal-6;
+    color: white;
+    transition: .2s all;
+  }
+  @include media("<tablet") {
+    display: none;
+  }
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  @include shadow(1);
+  width: 100%;
+  z-index: 20;
+  background: white;
+  .contents {
+    width: 100%;
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    @include media("<wide") { 
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @include media("<tablet") { 
+      padding-left: 0;
+      padding-right: 0;
+    };
+    .left-side {
+      @include center;
+      .logo {
+        @include center;
+        padding: 1rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        background: $oc-teal-7;
+        color: white;
+        text-decoration: none;
+        &:hover {
+          filter: brightness(115%);
+        }
+      }
+      .new {
+        @include link;
+      }
+      .my {
+        @include link;
+      }
+    }
+    .spacer {
+      flex-grow: 1;
+      input {
+        margin-left: 1rem;
+        padding: 0.5rem;
+        width: 20rem;
+        border: 1px solid $oc-gray-4;
+        @media (max-width: 812px) { 
+          width: 100%;
+          margin-left: 0;
+          height: 3rem;
+        }
+        &:focus {
+          outline: none;
+          border: 1px solid $oc-teal-7;
+          transition: .2s all;
+        }
+        &::placeholder {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .right-side {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      cursor: pointer;
+      border: 1px solid $oc-cyan-6;
+      color: $oc-cyan-6;
+      font-weight: 600;
+      text-decoration: none;
+      @include media("<tablet") { height: 100% }
+      &:hover {
+        color: white;
+        background: $oc-cyan-6;
+        transition: .2s all;
+        @include shadow(1);
+      }
+    }
+  }
+  .gradient-border {
+    height: 3px;
+    background: linear-gradient(to right, $oc-teal-6, $oc-cyan-5);
+  }
+}

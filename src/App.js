@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
-import { Home } from 'pages';
-import Auth from './pages/Auth';
+import { Home, Auth, Post, User } from 'pages';
 
 class App extends Component {
   render() {
@@ -9,6 +8,8 @@ class App extends Component {
       <div>
         <Route exact path='/' component={Home}/>
         <Route path='/auth' component={Auth}/>
+        <Route path='/new' component={Post}/>
+        <Route path='/user/:username' component={User}/>
       </div>
     );
   }
