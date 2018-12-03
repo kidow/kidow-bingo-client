@@ -1,7 +1,6 @@
 import React from 'react';
-import { Header } from 'components/Base'
 import { PostList } from 'components/Shared';
-import PageWrapper from '../components/Base/PageWrapper/PageWrapper';
+import { PageWrapper } from 'components/Base';
 
 const Home = () => {
   return (

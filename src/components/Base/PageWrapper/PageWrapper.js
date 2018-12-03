@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 
 const PageWrapper = ({children}) => {
   return (
-    <div>
+    <div className='page-wrapper'>
       <Header />
       {children}
     </div>

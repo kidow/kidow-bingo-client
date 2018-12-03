@@ -1,12 +1,11 @@
 import React from 'react';
 import { PageWrapper } from 'components/Base';
+import PostList from '../components/Shared/PostList/PostList';
 
 const Post = () => {
   return (
     <PageWrapper>
-      <h1>Post</h1>
-      <h1>Post</h1>
-      <h1>Post</h1>
+      <PostList />
     </PageWrapper>
   );
 };
