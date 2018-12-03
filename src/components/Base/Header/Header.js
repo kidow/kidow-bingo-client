@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.scss'
 import LoginButton from '../LoginButton';
+import InfoButton from '../InfoButton';
 
 const Header = ({username, logged, onLogout}) => {
   return (
@@ -16,10 +17,7 @@ const Header = ({username, logged, onLogout}) => {
           <input placeholder='빙고 제목을 입력 후 엔터를 눌러주세요.' />
         </div>
         {logged ? (
-          <div className='logged'>
-            <Link to={`/user/${username}`} className='info'>수정</Link>
-            <div onClick={onLogout} className='logout'>로그아웃</div>
-          </div>
+          <InfoButton />
         ) : (
           <LoginButton />
         )}
