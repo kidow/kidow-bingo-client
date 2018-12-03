@@ -11,7 +11,7 @@ const InfoButton = ({onLogout, username}) => {
   return (
     <div className='info-button'>
       <NavLink 
-        to={`/user/${username}`} 
+        to={`/user/${username}/changeName`} 
         className='info'
         activeStyle={activeStyle}
       >

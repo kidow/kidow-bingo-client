@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { SwitchLink } from 'components/Auth';
-import { Button, Input, Content, Error } from 'components/Base'
+import { Button, Input, Content, Error, SwitchLink } from 'components/Base'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
