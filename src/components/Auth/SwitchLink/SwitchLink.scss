@@ -1,0 +1,14 @@
+@import '~lib/styles/modules';
+
+.switch-link {
+  margin-top: 1rem;
+  text-align: right;
+  .link {
+    color: $oc-gray-6;
+    text-decoration: none;
+    &:hover {
+      color: $oc-gray-7;
+      text-decoration: underline;
+    }
+  }
+}

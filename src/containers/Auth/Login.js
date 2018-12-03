@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthContent, InputWithLabel, AuthButton } from 'components/Auth';
+import { AuthContent, InputWithLabel, AuthButton, SwitchLink } from 'components/Auth';
 
 class Login extends Component {
   render() {
@@ -20,6 +20,7 @@ class Login extends Component {
 
         />
         <AuthButton>로그인</AuthButton>
+        <SwitchLink to='/auth/register'>회원가입</SwitchLink>
       </AuthContent>
     );
   }
