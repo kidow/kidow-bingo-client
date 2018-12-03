@@ -31,10 +31,10 @@ class Login extends Component {
 
   handleLocalLogin = async () => {
     const { form, AuthActions, UserActions, history } = this.props
-    const { email, password } = form.toJS()
+    const { username, password } = form.toJS()
 
     try {
-      await AuthActions.localLogin({ email, password })
+      await AuthActions.localLogin({ username, password })
       const loggedInfo = this.props.result.toJS()
 
       UserActions.setLoggedInfo(loggedInfo)
@@ -66,17 +66,16 @@ class Login extends Component {
   }
   
   render() {
-    const { email, password } = this.props.form.toJS()
+    const { username, password } = this.props.form.toJS()
     const { handleChange, handleLocalLogin, handleKeyPress } = this
     const { error } = this.props
     return (
       <AuthContent title='로그인'>
         <InputWithLabel 
-          label='이메일'
-          type='email'
-          name='email'
-          placeholder='이메일'
-          value={email}
+          label='아이디'
+          name='username'
+          placeholder='아이디'
+          value={username}
           onChange={handleChange}
         />
         <InputWithLabel 
