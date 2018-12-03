@@ -1,0 +1,24 @@
+@import '~lib/styles/modules';
+
+.input-with-label {
+  & + & {
+    margin-top: 1rem;
+  }
+  .label {
+    font-size: 1rem;
+    color: $oc-gray-6;
+    margin-bottom: 0.25rem;
+  }
+  .input {
+    width: 100%;
+    border: 1px solid $oc-gray-3;
+    outline: none;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &::placeholder {
+      color: $oc-gray-3;
+    }
+  }
+}
