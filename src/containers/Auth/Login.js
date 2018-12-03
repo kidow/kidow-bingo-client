@@ -38,7 +38,7 @@ class Login extends Component {
           value={password}
           onChange={handleChange}
         />
-        <AuthError>에러</AuthError>
+        {error && <AuthError>에러</AuthError>}
         <AuthButton>로그인</AuthButton>
         <SwitchLink to='/auth/register'>회원가입</SwitchLink>
       </AuthContent>
