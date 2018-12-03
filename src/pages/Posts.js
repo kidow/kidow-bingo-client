@@ -1,11 +1,10 @@
 import React from 'react';
 import { PageWrapper } from 'components/Base';
-import PostList from '../components/Shared/PostList/PostList';
 
 const Post = () => {
   return (
     <PageWrapper>
-      <PostList />
+      <h1>내 빙고들</h1>
     </PageWrapper>
   );
 };
