@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.scss'
+import LoginButton from '../LoginButton';
 
 const Header = ({username, logged, onLogout}) => {
   return (
@@ -20,9 +21,7 @@ const Header = ({username, logged, onLogout}) => {
             <div onClick={onLogout} className='logout'>로그아웃</div>
           </div>
         ) : (
-          <Link to='/auth/login' className='right-side'>
-            로그인 | 가입
-          </Link>
+          <LoginButton />
         )}
       </div>
       <div className='gradient-border'/>

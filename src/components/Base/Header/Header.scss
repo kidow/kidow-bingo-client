@@ -107,26 +107,6 @@
         }
       }
     }
-    .right-side {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
-      cursor: pointer;
-      border: 1px solid $oc-cyan-6;
-      color: $oc-cyan-6;
-      font-weight: 600;
-      text-decoration: none;
-      @include media("<tablet") { height: 100% }
-      &:hover {
-        color: white;
-        background: $oc-cyan-6;
-        transition: .2s all;
-        @include shadow(1);
-      }
-      &:active {
-        background: $oc-cyan-8;
-      }
-    }
     .logged {
       display: flex;
       color: $oc-cyan-6;
