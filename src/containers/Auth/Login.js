@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthContent, InputWithLabel } from 'components/Auth';
+import { AuthContent, InputWithLabel, AuthButton } from 'components/Auth';
 
 class Login extends Component {
   render() {
@@ -19,6 +19,7 @@ class Login extends Component {
           placeholder='비밀번호'
 
         />
+        <AuthButton>로그인</AuthButton>
       </AuthContent>
     );
   }
