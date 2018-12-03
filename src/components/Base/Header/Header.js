@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import './Header.scss'
 import LoginButton from '../LoginButton';
 import InfoButton from '../InfoButton';
+import SearchBar from '../SearchBar';
 
 const activeStyle = {
   color: 'white',
@@ -18,9 +19,7 @@ const Header = ({username, logged, onLogout}) => {
           <NavLink to={logged ? '/new' : '/auth/login'} activeStyle={activeStyle} className='new'>새 빙고 만들기</NavLink>
           {logged && <NavLink className='my' activeStyle={logged && activeStyle} to={`/posts/${username}`}>내가 만든 빙고</NavLink>}
         </div>
-        <div className='spacer'>
-          <input placeholder='빙고 제목을 입력 후 엔터를 눌러주세요.' />
-        </div>
+        <SearchBar />
         {logged ? (
           <InfoButton username={username} onLogout={onLogout}/>
         ) : (

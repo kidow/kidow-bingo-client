@@ -20,5 +20,9 @@
     &::placeholder {
       color: $oc-gray-3;
     }
+    &:focus {
+      border: 1px solid $oc-teal-7;
+      transition: .4s all;
+    }
   }
 }

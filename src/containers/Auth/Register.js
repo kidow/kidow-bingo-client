@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AuthContent, SwitchLink } from 'components/Auth';
-import { Button, Input, Error } from 'components/Base'
+import { SwitchLink } from 'components/Auth';
+import { Button, Input, Error, Content } from 'components/Base'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -142,7 +142,7 @@ class Register extends Component {
     const { handleChange, handleLocalRegister, handleKeyPress } = this
     const { error } = this.props
     return (
-      <AuthContent title='회원가입'>
+      <Content title='회원가입'>
         <Input
           label='이메일'
           type='email'
@@ -170,7 +170,7 @@ class Register extends Component {
         {error && <Error>{error}</Error>}
         <Button onClick={handleLocalRegister}>회원가입</Button>
         <SwitchLink to='/auth/login'>로그인</SwitchLink>
-      </AuthContent>
+      </Content>
     );
   }
 }

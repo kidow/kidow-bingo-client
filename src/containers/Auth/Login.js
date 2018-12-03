@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AuthContent, SwitchLink } from 'components/Auth';
-import { Button, Input } from 'components/Base'
+import { SwitchLink } from 'components/Auth';
+import { Button, Input, Content, Error } from 'components/Base'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,7 +9,6 @@ import * as userActions from 'store/user'
 
 import storage from 'lib/storage'
 import queryString from 'query-string'
-import Error from 'components/Base/Error/Error';
 
 class Login extends Component {
   handleChange = e => {
@@ -72,7 +71,7 @@ class Login extends Component {
     const { handleChange, handleLocalLogin, handleKeyPress } = this
     const { error } = this.props
     return (
-      <AuthContent title='로그인'>
+      <Content title='로그인'>
         <Input
           label='아이디'
           name='username'
@@ -92,7 +91,7 @@ class Login extends Component {
         {error && <Error>에러</Error>}
         <Button onClick={handleLocalLogin}>로그인</Button>
         <SwitchLink to='/auth/register'>회원가입</SwitchLink>
-      </AuthContent>
+      </Content>
     );
   }
 }

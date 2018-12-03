@@ -1,10 +1,10 @@
 import React from 'react';
-import './AuthWrapper.scss'
+import './Wrapper.scss'
 import { IoIosGrid } from 'react-icons/io'
 
-const AuthWrapper = ({children}) => {
+const Wrapper = ({children}) => {
   return (
-    <div className='auth-wrapper'>
+    <div className='wrapper'>
       <div className='box'>
         <div className='logo-wrapper'>
           <IoIosGrid size='2rem'/>
@@ -18,4 +18,4 @@ const AuthWrapper = ({children}) => {
   );
 };
 
-export default AuthWrapper;
+export default Wrapper;

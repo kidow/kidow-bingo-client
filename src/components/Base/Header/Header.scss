@@ -77,36 +77,6 @@
         }
       }
     }
-    .spacer {
-      flex-grow: 1;
-      input {
-        margin-left: 1rem;
-        padding: 0.5rem;
-        width: 20rem;
-        border: 1px solid $oc-gray-4;
-        letter-spacing: 1px;
-        font-size: 0.8rem;
-        font-weight: 400;
-        @media (max-width: 812px) { 
-          width: 100%;
-          margin-left: 0;
-          height: 3rem;
-          font-size: 1.2rem;
-          letter-spacing: 0;
-        }
-        &:focus {
-          outline: none;
-          border: 1px solid $oc-teal-7;
-          transition: .2s all;
-        }
-        &::placeholder {
-          font-size: 0.8rem;
-          @media (max-width: 812px) {
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
   }
   .gradient-border {
     height: 3px;
