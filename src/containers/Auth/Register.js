@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { AuthContent } from '../../components/Auth';
 
 class Register extends Component {
   render() {
     return (
-      <div>
+      <AuthContent title='회원가입'>
         Register
-      </div>
+      </AuthContent>
     );
   }
 }

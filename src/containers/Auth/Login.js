@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AuthWrapper from '../../components/Auth/AuthWrapper/AuthWrapper';
+import { AuthContent } from 'components/Auth';
 
 class Login extends Component {
   render() {
     return (
-      <AuthWrapper>
-        Login
-      </AuthWrapper>
+      <AuthContent title='로그인'>
+        Logi
+      </AuthContent>
     );
   }
 }
