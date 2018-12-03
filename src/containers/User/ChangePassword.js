@@ -20,7 +20,7 @@ class ChangePassword extends Component {
         />
         {/* {error && <Error>{error}</Error>} */}
         <Button >변경하기</Button>
-        <Button >탈퇴하기</Button>
+        <Button red>탈퇴하기</Button>
         <SwitchLink to={`/user/${username}/changeName`}>아이디 변경하기</SwitchLink>
       </Content>
     );

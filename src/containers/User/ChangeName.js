@@ -16,7 +16,7 @@ class NameChange extends Component {
         />
         {/* {error && <Error>{error}</Error>} */}
         <Button >변경하기</Button>
-        <Button >탈퇴하기</Button>
+        <Button red>탈퇴하기</Button>
         <SwitchLink to={`/user/${username}/changePassword`}>비밀변호 변경하기</SwitchLink>
       </Content>
     );

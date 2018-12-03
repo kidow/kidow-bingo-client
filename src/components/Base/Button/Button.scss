@@ -26,3 +26,29 @@
     background: $oc-teal-7;
   }
 }
+
+.red-button {
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+
+  background: $oc-red-6;
+  color: white;
+
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  user-select: none;
+  transition: .2s all;
+
+  &:hover {
+    background: $oc-red-5;
+    @include shadow(0)
+  }
+
+  &:active {
+    background: $oc-red-7;
+  }
+}
