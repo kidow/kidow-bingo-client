@@ -1,11 +1,11 @@
 import React from 'react';
 import './PageWrapper.scss'
-import Header from '../Header/Header';
+import HeaderContainer from 'containers/Base/HeaderContainer';
 
 const PageWrapper = ({children}) => {
   return (
     <div className='page-wrapper'>
-      <Header />
+      <HeaderContainer />
       {children}
     </div>
   );
