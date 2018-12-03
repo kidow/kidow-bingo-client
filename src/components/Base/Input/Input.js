@@ -1,7 +1,7 @@
 import React from 'react';
-import './InputWithLabel.scss'
+import './Input.scss'
 
-const InputWithLabel = ({label, ...rest}) => {
+const Input = ({label, ...rest}) => {
   return (
     <div className='input-with-label'>
       <div className='label'>{label}</div>
@@ -10,4 +10,4 @@ const InputWithLabel = ({label, ...rest}) => {
   );
 };
 
-export default InputWithLabel;
+export default Input;

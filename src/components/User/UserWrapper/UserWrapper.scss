@@ -1,0 +1,27 @@
+@import '~lib/styles/modules';
+@import '~lib/styles/shadow';
+
+.user-wrapper {
+  display: flex;
+  justify-content: center;
+  .box {
+    width: 500px;
+    @include shadow(2);
+    margin-top: 2rem;
+    .logo-wrapper {
+      background: $oc-teal-7;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    .contents {
+      height: auto;
+      padding: 2rem;
+      background: white;
+    }
+  }
+}

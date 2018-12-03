@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { AuthContent, InputWithLabel, AuthButton, SwitchLink, AuthError } from 'components/Auth';
+import { AuthContent, SwitchLink } from 'components/Auth';
+import { Button, Input, Error } from 'components/Base'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -142,7 +143,7 @@ class Register extends Component {
     const { error } = this.props
     return (
       <AuthContent title='회원가입'>
-        <InputWithLabel
+        <Input
           label='이메일'
           type='email'
           name='email'
@@ -150,14 +151,14 @@ class Register extends Component {
           value={email}
           onChange={handleChange}
         />
-        <InputWithLabel
+        <Input
           label='아이디'
           name='username'
           placeholder='아이디'
           value={username}
           onChange={handleChange}
         />
-        <InputWithLabel
+        <Input
           label='비밀번호'
           type='password'
           name='password'
@@ -166,8 +167,8 @@ class Register extends Component {
           onChange={handleChange}
           onKeyPress={handleKeyPress}
         />
-        {error && <AuthError>{error}</AuthError>}
-        <AuthButton onClick={handleLocalRegister}>회원가입</AuthButton>
+        {error && <Error>{error}</Error>}
+        <Button onClick={handleLocalRegister}>회원가입</Button>
         <SwitchLink to='/auth/login'>로그인</SwitchLink>
       </AuthContent>
     );

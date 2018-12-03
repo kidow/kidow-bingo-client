@@ -14,7 +14,9 @@ const InfoButton = ({onLogout, username}) => {
         to={`/user/${username}`} 
         className='info'
         activeStyle={activeStyle}
-      >수정</NavLink>
+      >
+        수정
+      </NavLink>
       <div onClick={onLogout} className='logout'>로그아웃</div>
     </div>
   );

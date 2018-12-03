@@ -4,7 +4,9 @@ import { UserInfo } from 'components/User';
 class UserInfoContainer extends Component {
   render() {
     return (
-      <UserInfo />
+      <UserInfo>
+        
+      </UserInfo>
     );
   }
 }
