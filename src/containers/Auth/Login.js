@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AuthContent, InputWithLabel, AuthButton, SwitchLink } from 'components/Auth';
+import { AuthContent, InputWithLabel, AuthButton, SwitchLink, AuthError } from 'components/Auth';
 
 class Login extends Component {
   render() {
@@ -19,6 +19,7 @@ class Login extends Component {
           placeholder='비밀번호'
 
         />
+        <AuthError>에러</AuthError>
         <AuthButton>로그인</AuthButton>
         <SwitchLink to='/auth/register'>회원가입</SwitchLink>
       </AuthContent>

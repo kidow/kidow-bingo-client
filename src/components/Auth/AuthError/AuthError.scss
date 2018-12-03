@@ -1,0 +1,28 @@
+@import '~lib/styles/modules';
+
+.auth-error {
+  margin: 1rem 0;
+  color: $oc-red-7;
+  text-align: center;
+  font-weight: 500;
+  animation: shake 0.3s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-30px);
+  }
+  25% {
+    transform: translate(20px);
+  }
+  50% {
+    transform: translate(-10px);
+  }
+  75% {
+    transform: translate(5px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
