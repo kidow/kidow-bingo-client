@@ -17,7 +17,7 @@ const Header = ({username, logged, onLogout}) => {
           <input placeholder='빙고 제목을 입력 후 엔터를 눌러주세요.' />
         </div>
         {logged ? (
-          <InfoButton />
+          <InfoButton username={username} onLogout={onLogout}/>
         ) : (
           <LoginButton />
         )}
