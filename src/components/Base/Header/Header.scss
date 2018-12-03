@@ -60,12 +60,21 @@
         &:hover {
           filter: brightness(115%);
         }
+        &:active {
+          background: $oc-teal-8;
+        }
       }
       .new {
         @include link;
+        &:active {
+          background: $oc-teal-8;
+        }
       }
       .my {
         @include link;
+        &:active {
+          background: $oc-teal-8;
+        }
       }
     }
     .spacer {
@@ -111,6 +120,49 @@
         background: $oc-cyan-6;
         transition: .2s all;
         @include shadow(1);
+      }
+      &:active {
+        background: $oc-cyan-8;
+      }
+    }
+    .logged {
+      display: flex;
+      color: $oc-cyan-6;
+      height: 100%;
+      cursor: pointer;
+      .info {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: $oc-cyan-6;
+        &:hover {
+          color: white;
+          background: $oc-cyan-6;
+          transition: .2s all;
+        }
+        &:active {
+          background: $oc-cyan-8;
+        }
+      }
+      .logout {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 600;
+        &:hover {
+          color: white;
+          background: $oc-cyan-6;
+          transition: .2s all;
+        }
+        &:active {
+          background: $oc-cyan-8;
+        }
       }
     }
   }
