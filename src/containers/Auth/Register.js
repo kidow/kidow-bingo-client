@@ -25,13 +25,6 @@ class Register extends Component {
           placeholder='비밀번호'
 
         />
-        <InputWithLabel
-          label='비밀번호 확인'
-          type='password'
-          name='passwordConfirm'
-          placeholder='비밀번호 확인'
-
-        />
         <AuthError>에러</AuthError>
         <AuthButton>회원가입</AuthButton>
         <SwitchLink to='/auth/login'>로그인</SwitchLink>
