@@ -3,8 +3,10 @@ import { Map } from 'immutable'
 import { pender } from 'redux-pender'
 
 const CHANGE_INPUT = 'auth/CHANGE_INPUT'
+const INITIALIZE_FORM = 'auth/INITIALIZE_FORM'
 
 export const changeInput = createAction(CHANGE_INPUT)
+export const initializeForm = createAction(INITIALIZE_FORM)
 
 const initialState = Map({
   login: Map({
@@ -19,10 +21,23 @@ const initialState = Map({
       email: '',
       username: '',
       password: ''
-    })
-  })
+    }),
+    exists: Map({
+      email: false,
+      username: false
+    }),
+    error: '',
+  }),
+  result: Map({})
 })
 
 export default handleActions({
-
+  [CHANGE_INPUT]: (state, action) => {
+    const { form, name, value } = action.payload
+    return state.setIn([form, 'form', name], value)
+  },
+  [INITIALIZE_FORM]: (state, action) => {
+    const initialForm = initialState.get(action.payload)
+    return state.set(action.payload, initialForm)
+  }
 }, initialState)
