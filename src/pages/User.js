@@ -1,12 +1,11 @@
 import React from 'react';
 import { PageWrapper } from 'components/Base';
+import UserInfoContainer from 'containers/User/UserInfoContainer';
 
 const User = () => {
   return (
     <PageWrapper>
-      <h1>User</h1>
-      <h1>User</h1>
-      <h1>User</h1>
+      <UserInfoContainer />
     </PageWrapper>
   );
 };

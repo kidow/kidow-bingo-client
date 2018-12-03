@@ -3,7 +3,7 @@ import './PostList.scss'
 
 const PostList = () => {
   return (
-    <div>
+    <div className='post-list'>
       PostList
     </div>
   );
