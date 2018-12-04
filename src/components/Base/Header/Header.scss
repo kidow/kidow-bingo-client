@@ -57,6 +57,7 @@
         background: $oc-teal-7;
         color: white;
         text-decoration: none;
+        @include media("<phone") { font-size: 1rem }
         &:hover {
           filter: brightness(115%);
         }
