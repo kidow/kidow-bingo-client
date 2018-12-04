@@ -1,10 +1,11 @@
 import React from 'react';
 import { PageWrapper } from 'components/Layouts';
+import NewPostContainer from 'containers/Shared/NewPostContainer';
 
 const New = () => {
   return (
     <PageWrapper>
-      <h1>새 빙고 만들기</h1>
+      <NewPostContainer />
     </PageWrapper>
   );
 };
