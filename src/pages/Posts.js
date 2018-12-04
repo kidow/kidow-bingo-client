@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageWrapper } from 'components/Base';
+import { PageWrapper } from 'components/Layouts';
 
 const Post = () => {
   return (
