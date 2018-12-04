@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { NewPost } from 'components/Shared';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userActions from 'store/user'
 
-class NewPostContainer extends Component {
+class MyPostListContainer extends Component {
   render() {
     const { logged } = this.props
     return (
-      <NewPost 
-        logged={logged}
-      />
+      <div>
+        {logged ? 'login' : 'not login'}
+      </div>
     );
   }
 }
@@ -23,4 +22,4 @@ export default connect(
   dispatch => ({
     UserActions: bindActionCreators(userActions, dispatch)
   })
-)(NewPostContainer);
+)(MyPostListContainer);
