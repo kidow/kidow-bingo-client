@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 import Login from 'containers/Auth/Login';
 import Register from 'containers/Auth/Register';
-import PageWrapper from '../components/Base/PageWrapper/PageWrapper';
+import { PageWrapper } from 'components/Base';
 
 const Auth = () => {
   return (
