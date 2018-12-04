@@ -13,38 +13,14 @@
 
 @mixin column {
   display: flex;
-  .column-1 {
+  input {
     @include input
-  }
-  .column-2 {
-    @include input;
-  }
-  .column-3 {
-    @include input;
-  }
-  .column-4 {
-    @include input;
-  }
-  .column-5 {
-    @include input;
   }
 }
 
 @mixin row {
   background: white;
-  .row-1 {
-    @include column
-  }
-  .row-2 {
-    @include column
-  }
-  .row-3 {
-    @include column
-  }
-  .row-4 {
-    @include column
-  }
-  .row-5 {
+  div {
     @include column
   }
 }
