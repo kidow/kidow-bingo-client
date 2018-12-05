@@ -1,10 +1,17 @@
 import React from 'react';
 import './PostList.scss'
+import Masonry from 'react-masonry-component'
+import PostItem from '../PostItem';
 
-const PostList = () => {
+const PostList = ({masonryRef, posts, onToggleLike, onCommentClick}) => {
+  const postList = posts.map(post => 
+    <PostItem key={post.get('id')} post={post} onToggleLike={onToggleLike} onCommentClick={onCommentClick}/>
+  )
   return (
     <div className='post-list'>
-      PostList
+      <Masonry options={{gutter: 16}} ref={masonryRef}>
+        {postList}
+      </Masonry>
     </div>
   );
 };

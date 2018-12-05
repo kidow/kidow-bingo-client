@@ -1,11 +1,11 @@
 import React from 'react';
-import { PostList } from 'components/Shared';
 import { PageWrapper } from 'components/Layouts';
+import PostListContainer from 'containers/Shared/PostListContainer';
 
 const Home = () => {
   return (
     <PageWrapper>
-      <PostList />
+      <PostListContainer />
     </PageWrapper>
   );
 };

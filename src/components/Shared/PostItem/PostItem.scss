@@ -1,0 +1,8 @@
+@import '~lib/styles/modules';
+@import '~lib/styles/shadow';
+@import '~lib/styles/utils';
+
+.post-item {
+  width: calc((100% - 20px) / 4);
+  background: white;
+}
