@@ -1,10 +1,15 @@
 import { createAction, handleActions } from 'redux-actions'
-import { Map, List } from 'immutable'
-// import { pender } from 'redux-pender'
+import { Map } from 'immutable'
+import { pender } from 'redux-pender'
+import * as api from 'lib/api/posts'
 
 const CHANGE_INPUT = 'post/CHANGE_INPUT'
+const WRITE_POST = 'post/WRITE_POST'
+const SET_ERROR = 'post/SET_ERROR'
 
 export const changeInput = createAction(CHANGE_INPUT)
+export const writePost = createAction(WRITE_POST, api.write)
+export const setError = createAction(SET_ERROR)
 
 const initialState = Map({
   write: Map({
@@ -39,13 +44,19 @@ const initialState = Map({
     twoBingo: '',
     threeBingo: '',
     error: ''
-  }),
-  list: List([])
+  })
 })
 
 export default handleActions({
   [CHANGE_INPUT]: (state, action) => {
     const { name, value } = action.payload
     return state.setIn(['write', name], value)
-  }
+  },
+  [SET_ERROR]: (state, action) => {
+    return state.setIn(['write', 'error'], action.payload)
+  },
+  ...pender({
+    type: WRITE_POST,
+    onSuccess: (state, action) => initialState
+  })
 }, initialState)
