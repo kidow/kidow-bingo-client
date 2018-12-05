@@ -77,6 +77,7 @@ const NewPost = ({
           name='threeBingo'
           onChange={onChange}
         />
+        <Input type='file' name='파일'/>
         {error && <Error>{error}</Error>}
         <Button onClick={onClick}>완성하기</Button>
       </div>

@@ -5,7 +5,7 @@ import PostItem from '../PostItem';
 
 const PostList = ({masonryRef, posts, onToggleLike, onCommentClick}) => {
   const postList = posts.map(post => 
-    <PostItem key={post.get('id')} post={post} onToggleLike={onToggleLike} onCommentClick={onCommentClick}/>
+    <PostItem key={post.get('_id')} post={post} onToggleLike={onToggleLike} onCommentClick={onCommentClick}/>
   )
   return (
     <div className='post-list'>

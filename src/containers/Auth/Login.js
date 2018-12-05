@@ -77,6 +77,7 @@ class Login extends Component {
           placeholder='아이디'
           value={username}
           onChange={handleChange}
+          onKeyPress={handleKeyPress}
         />
         <Input
           label='비밀번호'

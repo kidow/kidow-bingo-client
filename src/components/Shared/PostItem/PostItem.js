@@ -1,5 +1,6 @@
 import React from 'react';
 import './PostItem.scss'
+import PostFooter from '../PostFooter';
 
 const PostItem = ({post, onToggleLike, onCommentClick}) => {
   const { _id, title, description, liked, likesCount, comments } = post.toJS()
@@ -10,10 +11,15 @@ const PostItem = ({post, onToggleLike, onCommentClick}) => {
   const commentClick = () => onCommentClick(_id)
   return (
     <div className='post-item'>
-      <div>{title}</div>
-      <div>{description}</div>
-      <div>{likesCount}</div>
-      <div>{comments}</div>
+      <div className='title-image'>이미지</div>
+      <div className='item-title'>{title}</div>
+      <div className='description'>{description}</div>
+      <PostFooter
+        likesCount={likesCount}
+        comments={comments}
+        onToggleLike={toggleLike}
+        onCommentClick={commentClick}
+      />
     </div>
   );
 };

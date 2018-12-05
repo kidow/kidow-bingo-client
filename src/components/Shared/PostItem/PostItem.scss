@@ -3,6 +3,34 @@
 @import '~lib/styles/utils';
 
 .post-item {
-  width: calc((100% - 20px) / 4);
+  width: calc((100% - 20px) / 6);
   background: white;
+  @include shadow(0);
+  &:hover {
+    @include shadow(1);
+  }
+  .title-image {
+    background-image: url('');
+    cursor: pointer;
+  }
+  .item-title {
+    padding: 1rem;
+    color: $oc-gray-7;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover {
+      color: $oc-teal-7;
+    }
+    &:active {
+      color: $oc-teal-9;
+    }
+  }
+  .description {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $oc-gray-7;
+    font-weight: 300;
+    padding-bottom: 1rem;
+  }
 }

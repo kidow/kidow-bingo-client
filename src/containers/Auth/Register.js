@@ -149,6 +149,7 @@ class Register extends Component {
           placeholder='이메일'
           value={email}
           onChange={handleChange}
+          onKeyPress={handleKeyPress}
         />
         <Input
           label='아이디'
@@ -156,6 +157,7 @@ class Register extends Component {
           placeholder='아이디'
           value={username}
           onChange={handleChange}
+          onKeyPress={handleKeyPress}
         />
         <Input
           label='비밀번호'

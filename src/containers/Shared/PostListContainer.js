@@ -93,16 +93,16 @@ class PostListContainer extends Component {
     const { handleToggleLike, handleCommentClick } = this
     return (
       <>
-        {/* {loading ? (
+        {loading ? (
           <Spinner />
-        ) : ( */}
+        ) : (
           <PostList 
             masonryRef={ref => this.masonry = ref}
             posts={data}
             onToggleLike={handleToggleLike}
             onCommentClick={handleCommentClick}
           />
-        {/* )} */}
+        )}
       </>
     );
   }
