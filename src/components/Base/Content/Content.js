@@ -1,6 +1,6 @@
 import React from 'react';
 import './Content.scss'
-import Wrapper from '../Wrapper';
+import { Wrapper } from 'components/Layouts';
 
 const Content = ({title, children}) => {
   return (

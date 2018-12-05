@@ -4,14 +4,24 @@
 
 .post-item {
   width: calc((100% - 20px) / 6);
+  @include media("<desktop") { width: calc(100% - 10px) / 3 }
   background: white;
   @include shadow(0);
+  margin-bottom: 1rem;
   &:hover {
     @include shadow(1);
+    transform: scale(1.05);
+    transition: all .2s;
   }
   .title-image {
     background-image: url('');
+    background: $oc-gray-0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $oc-gray-3;
     cursor: pointer;
+    height: 225px;
   }
   .item-title {
     padding: 1rem;

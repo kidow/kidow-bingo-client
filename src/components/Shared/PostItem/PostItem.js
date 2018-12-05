@@ -11,7 +11,7 @@ const PostItem = ({post, onToggleLike, onCommentClick}) => {
   const commentClick = () => onCommentClick(_id)
   return (
     <div className='post-item'>
-      <div className='title-image'>이미지</div>
+      <div className='title-image'>이미지를 등록하세요</div>
       <div className='item-title'>{title}</div>
       <div className='description'>{description}</div>
       <PostFooter

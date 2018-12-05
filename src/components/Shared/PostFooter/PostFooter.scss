@@ -24,14 +24,23 @@
         color: $oc-gray-6;
       }
       &:active {
-        color: $oc-red-8;
+        color: $oc-teal-6;
       }
     }
     .active {
-      color: $oc-pink-7;
+      color: $oc-teal-5;
       &:hover {
-        color: $oc-pink-5;
+        color: $oc-teal-3;
       }
+    }
+  }
+  .share {
+    flex-grow: 1;
+    &:hover {
+      color: $oc-gray-6;
+    }
+    &:active {
+      color: $oc-teal-6;
     }
   }
   .comments {

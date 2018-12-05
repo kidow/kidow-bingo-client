@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import './Header.scss'
-import LoginButton from '../LoginButton';
-import InfoButton from '../InfoButton';
-import SearchBar from '../SearchBar';
+import { LoginButton, InfoButton, SearchBar } from 'components/Base'
 
 const activeStyle = {
   color: 'white',

@@ -52,7 +52,6 @@
 .new-post {
   display: flex;
   justify-content: space-around;
-  padding-top: 2rem;
   .table {
     @include row;
     @include shadow(1);

@@ -57,21 +57,21 @@ const NewPost = ({
           name='description'
         />
         <Input
-          label='원 빙고, 당신은...'
+          label='원 빙고 멘트 (필수)'
           placeholder='원 빙고 시 보여줄 말을 입력하세요'
           value={oneBingo}
           name='oneBingo'
           onChange={onChange}
         />
         <Input
-          label='투 빙고, 당신은...'
+          label='투 빙고 멘트 (필수)'
           placeholder='투 빙고 시 보여줄 말을 입력하세요'
           value={twoBingo}
           name='twoBingo'
           onChange={onChange}
         />
         <Input
-          label='쓰리 빙고, 당신은...'
+          label='쓰리 빙고 이상 멘트 (필수)'
           placeholder='쓰리 빙고 이상 시 보여줄 말을 입력하세요'
           value={threeBingo}
           name='threeBingo'
