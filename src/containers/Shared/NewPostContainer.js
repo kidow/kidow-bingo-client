@@ -22,7 +22,7 @@ class NewPostContainer extends Component {
       cell_3_1, cell_3_2, cell_3_3, cell_3_4, cell_3_5,
       cell_4_1, cell_4_2, cell_4_3, cell_4_4, cell_4_5,
       cell_5_1, cell_5_2, cell_5_3, cell_5_4, cell_5_5,
-      title, description
+      title, description, oneBingo, twoBingo, threeBingo
     } = write.toJS()
     return (
       <NewPost 
@@ -55,6 +55,9 @@ class NewPostContainer extends Component {
         cell_5_3={cell_5_3}
         cell_5_4={cell_5_4}
         cell_5_5={cell_5_5}
+        oneBingo={oneBingo}
+        twoBingo={twoBingo}
+        threeBingo={threeBingo}
       />
     );
   }

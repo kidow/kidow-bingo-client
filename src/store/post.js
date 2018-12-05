@@ -35,6 +35,9 @@ const initialState = Map({
     cell_5_5: '',
     title: '',
     description: '',
+    oneBingo: '',
+    twoBingo: '',
+    threeBingo: '',
     error: ''
   }),
   list: List([])
