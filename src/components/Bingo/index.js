@@ -1,3 +1,5 @@
 export { default as BingoContent } from './BingoContent'
 export { default as BingoWrapper } from './BingoWrapper'
 export { default as BingoChoice } from './BingoChoice'
+export { default as BingoTable } from './BingoTable'
+export { default as BingoResult } from './BingoResult'

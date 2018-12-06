@@ -30,6 +30,7 @@ class BingoContainer extends Component {
       cell_5_1, cell_5_2, cell_5_3, cell_5_4, cell_5_5,
       oneBingo, twoBingo, threeBingo
     } = post.toJS()
+    console.log(threeBingo)
     return (
       <BingoWrapper
         cell_1_1={cell_1_1}
