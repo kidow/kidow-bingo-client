@@ -8,7 +8,7 @@ const NewPost = ({
   cell_3_1, cell_3_2, cell_3_3, cell_3_4, cell_3_5,
   cell_4_1, cell_4_2, cell_4_3, cell_4_4, cell_4_5,
   cell_5_1, cell_5_2, cell_5_3, cell_5_4, cell_5_5,
-  logged, title, description, oneBingo, twoBingo, threeBingo, onChange, error, onClick
+  logged, title, description, oneBingo, twoBingo, threeBingo, onChange, error, onClick, onBingoChange
 }) => {
   return (
     <div className='new-post'>
@@ -38,7 +38,7 @@ const NewPost = ({
         cell_5_3={cell_5_3}
         cell_5_4={cell_5_4}
         cell_5_5={cell_5_5}
-        onChange={onChange}
+        onBingoChange={onBingoChange}
       />
       <div className='post-container'>
         <Input 
