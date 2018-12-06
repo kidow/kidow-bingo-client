@@ -1,13 +1,24 @@
 import React from 'react';
 import { PageWrapper } from 'components/Layouts';
-import MyPostListContainer from 'containers/User/MyPostListContainer';
+import PostListContainer from 'containers/Shared/PostListContainer';
 
-const Posts = () => {
-  return (
-    <PageWrapper>
-      <MyPostListContainer />
-    </PageWrapper>
-  );
-};
+import { connect } from 'react-redux'
 
-export default Posts;
+class Posts extends React.Component {
+  render() {
+    const { match, logged } = this.props
+    const { username } = match.params
+    if (!logged) return null
+    return (
+      <PageWrapper>
+        <PostListContainer username={username} />
+      </PageWrapper>
+    );
+  }
+}
+
+export default connect(
+  state => ({
+    logged: state.user.get('logged')
+  })
+)(Posts);

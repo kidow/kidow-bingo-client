@@ -1,7 +1,7 @@
 import React from 'react';
 import './BingoContent.scss'
 
-const BingoContent = () => {
+const BingoContent = ({cells}) => {
   return (
     <div className='bingo-content'>
       ㅁㄹㅈㅂㅇ ㄹㅂㄹㄷㅂㄹ ㅎㄱㄷㅎㄱㄷ ㄹㄷㅈㅂ  ㄹㄷㅈㅂ
