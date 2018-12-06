@@ -2,7 +2,7 @@ import React from 'react';
 import { PageWrapper } from 'components/Layouts';
 import MyPostListContainer from 'containers/User/MyPostListContainer';
 
-const Post = () => {
+const Posts = () => {
   return (
     <PageWrapper>
       <MyPostListContainer />
@@ -10,4 +10,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default Posts;

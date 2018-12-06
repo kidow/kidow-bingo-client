@@ -1,6 +1,7 @@
 import React from 'react';
 import './PostItem.scss'
 import PostFooter from '../PostFooter';
+import { Link } from 'react-router-dom'
 
 const PostItem = ({post, onToggleLike, onCommentClick}) => {
   const { _id, title, description, liked, likesCount, comments } = post.toJS()
@@ -11,8 +12,8 @@ const PostItem = ({post, onToggleLike, onCommentClick}) => {
   const commentClick = () => onCommentClick(_id)
   return (
     <div className='post-item'>
-      <div className='title-image'>이미지를 등록하세요</div>
-      <div className='item-title'>{title}</div>
+      <Link to={`/post/${_id}`} onClick={() => console.log('a')} className='title-image'>이미지를 등록하세요</Link>
+      <Link to={`/post/${_id}`} className='item-title'>{title}</Link>
       <div className='description'>{description}</div>
       <PostFooter
         likesCount={likesCount}

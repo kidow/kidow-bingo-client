@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import * as UserActions from 'store/user'
 
 import storage from 'lib/storage'
+import Bingo from 'pages/Bingo';
 
 class App extends Component {
   initializeUserInfo = async () => {
@@ -33,6 +34,7 @@ class App extends Component {
         <Route path='/auth' component={Auth}/>
         <Route path='/new' component={New}/>
         <Route path='/user/:username' component={User}/>
+        <Route path='/post/:postId' component={Bingo}/>
         <Route path='/posts/:username' component={Posts}/>
       </div>
     );
