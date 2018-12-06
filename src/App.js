@@ -34,7 +34,7 @@ class App extends Component {
         <Route path='/auth' component={Auth}/>
         <Route path='/new' component={New}/>
         <Route path='/user/:username' component={User}/>
-        <Route path='/post/:postId' component={Bingo}/>
+        <Route path='/post/:id' component={Bingo}/>
         <Route path='/posts/:username' component={Posts}/>
       </div>
     );

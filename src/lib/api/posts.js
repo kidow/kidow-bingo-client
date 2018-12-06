@@ -16,6 +16,7 @@ export const write = ({
   title, description, oneBingo, twoBingo, threeBingo
 })
 export const list = username => axios.get('/api/posts' + (username ? `?username=${username}` : ''))
+export const getData = id => axios.get(`/api/posts/${id}`)
 
 export const next = url => axios.get(url)
 export const like = postId => axios.post(`/api/posts/${postId}/likes`)

@@ -2,10 +2,11 @@ import React from 'react';
 import { BingoWrapper } from 'components/Layouts';
 import BingoContainer from 'containers/Bingo/BingoContainer';
 
-const Post = () => {
+const Post = ({match}) => {
+  const { id } = match.params
   return (
     <BingoWrapper>
-      <BingoContainer />
+      <BingoContainer id={id}/>
     </BingoWrapper>
   );
 };

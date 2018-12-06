@@ -44,7 +44,7 @@ export default handleActions({
     onSuccess: (state, action) => {
       const { next, data } = action.payload.data
       return state.set('next', next)
-        .set('data', fromJS(data))
+                  .set('data', fromJS(data))
     }
   }),
   ...pender({
@@ -52,13 +52,13 @@ export default handleActions({
     onSuccess: (state, action) => {
       const { next, data } = action.payload.data
       return state.set('next', next)
-        .set('nextData', fromJS(data))
+                  .set('nextData', fromJS(data))
     }
   }),
   [SHOW_PREFETCHED_POST]: (state, action) => {
     const nextData = state.get('nextData')
     return state.update('data', data => data.concat(nextData))
-      .set('nextData', List())
+                .set('nextData', List())
   },
   [RECEIVE_NEW_POST]: (state, action) => {
     return state.update('data', data => data.unshift(fromJS(action.payload)))
@@ -70,7 +70,7 @@ export default handleActions({
       return state.updateIn(
         ['data', index],
         post => post.set('liked', true)
-          .update('likedCount', count => count++)
+                    .update('likedCount', count => count++)
       )
     },
     onSuccess: (state, action) => {
@@ -86,7 +86,7 @@ export default handleActions({
       return state.updateIn(
         ['data', index],
         post => post.set('liked', false)
-          .update('likedCount', count => count--)
+                    .update('likedCount', count => count--)
       )
     },
     onSuccess: (state, action) => {

@@ -1,11 +1,14 @@
 import React from 'react';
 import './BingoContent.scss'
+import { BingoWrapper } from 'components/Layouts';
 
 const BingoContent = () => {
   return (
-    <div>
-      빙고콘텐트
-    </div>
+    <BingoWrapper>
+      <div className='bingo-content'>
+        빙고 시작
+      </div>
+    </BingoWrapper>
   );
 };
 

@@ -1,14 +1,19 @@
 import { createAction, handleActions } from 'redux-actions'
-import { Map } from 'immutable'
+import { Map, fromJS } from 'immutable'
+import { pender } from 'redux-pender'
+import * as api from 'lib/api/posts'
 
 const BINGO_COUNT = 'bingo/BINGO_COUNT'
 const CHECK = 'bingo/CHECK'
+const GET_DATA = 'bingo/GET_DATA'
 
 export const bingoCount = createAction(BINGO_COUNT)
 export const check = createAction(CHECK)
+export const getData = createAction(GET_DATA, api.getData)
 
 const initialState = Map({
   bingoCount: 0,
+  post: Map({}),
   cell_1_1: false,
   cell_1_2: false,
   cell_1_3: false,
@@ -43,5 +48,12 @@ export default handleActions({
   [CHECK]: (state, action) => {
     const { cell } = action.payload
     return state.set(cell, action.payload)
-  }
+  },
+  ...pender({
+    type: GET_DATA,
+    onSuccess: (state, action) => {
+      const { data: post } = action.payload
+      return state.set('post', fromJS(post))
+    }
+  })
 }, initialState)

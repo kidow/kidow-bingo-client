@@ -72,7 +72,7 @@ class PostListContainer extends Component {
   handleRelayout = () => {
     setTimeout(() => this.masonry.masonry.layout(), 0);
   }
-
+  
   componentDidMount() {
     this.load()
     window.addEventListener('scroll', this.handleScroll)
