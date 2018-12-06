@@ -1,5 +1,5 @@
 import React from 'react';
-import { BingoWrapper } from 'components/Layouts';
+import { BingoWrapper } from 'components/Bingo';
 import BingoContainer from 'containers/Bingo/BingoContainer';
 
 const Post = ({match}) => {

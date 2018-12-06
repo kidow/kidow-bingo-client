@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BingoContent } from 'components/Bingo';
+import { BingoWrapper } from 'components/Bingo';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -31,7 +31,7 @@ class BingoContainer extends Component {
       oneBingo, twoBingo, threeBingo
     } = post.toJS()
     return (
-      <BingoContent 
+      <BingoWrapper
         cell_1_1={cell_1_1}
         cell_1_2={cell_1_2}
         cell_1_3={cell_1_3}
