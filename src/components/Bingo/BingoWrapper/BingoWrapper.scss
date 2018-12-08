@@ -1,4 +1,11 @@
+@import '~lib/styles/modules';
+
+.ads {
+  height: 90px;
+  background: $oc-gray-8;
+}
+
 .bingo-wrapper {
   display: flex;
-  height: 100%;
+  height: calc(100% - 180px);
 }

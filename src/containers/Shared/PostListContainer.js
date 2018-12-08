@@ -72,6 +72,13 @@ class PostListContainer extends Component {
   handleRelayout = () => {
     setTimeout(() => this.masonry.masonry.layout(), 0);
   }
+
+  validate = () => {
+    const { loggedInfo, username } = this.props
+    if (username && loggedInfo.get('username') !== username) {
+      window.location.href = '/'
+    }
+  }
   
   componentDidMount() {
     this.load()
@@ -86,6 +93,7 @@ class PostListContainer extends Component {
   };
 
   componentWillUnmount() {
+    this.validate()
     window.removeEventListener('scroll', this.handleScroll)
   }
   render() {
@@ -114,7 +122,8 @@ export default connect(
     next: state.posts.get('next'),
     data: state.posts.get('data'),
     nextData: state.posts.get('nextData'),
-    logged: state.user.get('logged')
+    logged: state.user.get('logged'),
+    loggedInfo: state.user.get('loggedInfo')
   }),
   dispatch => ({
     PostsActions: bindActionCreators(postsActions, dispatch)

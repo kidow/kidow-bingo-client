@@ -8,6 +8,7 @@ import * as UserActions from 'store/user'
 
 import storage from 'lib/storage'
 import Bingo from 'pages/Bingo';
+import NotFound from 'pages/NotFound';
 
 class App extends Component {
   initializeUserInfo = async () => {
@@ -36,6 +37,7 @@ class App extends Component {
         <Route path='/user/:username' component={User}/>
         <Route path='/post/:id' component={Bingo}/>
         <Route path='/posts/:username' component={Posts}/>
+        <Route component={NotFound}/>
       </Switch>
     );
   }
