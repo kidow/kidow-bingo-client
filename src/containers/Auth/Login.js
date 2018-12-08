@@ -78,6 +78,7 @@ class Login extends Component {
           value={username}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
+          autoFocus
         />
         <Input
           label='비밀번호'

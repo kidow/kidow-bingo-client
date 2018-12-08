@@ -150,6 +150,7 @@ class Register extends Component {
           value={email}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
+          autoFocus
         />
         <Input
           label='아이디'
