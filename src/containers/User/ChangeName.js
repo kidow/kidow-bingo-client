@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import * as userActions from 'store/user'
 
 import isLength from 'validator/lib/isLength'
-import storage from 'lib/storage'
 
 class ChangeName extends Component {
   handleChange = e => {
@@ -31,7 +30,6 @@ class ChangeName extends Component {
   handleChangeName = async () => {
     const { UserActions, form } = this.props
     const { id } = form.toJS()
-    console.log(storage.get('loggedInfo'))
     if (!isLength(id, { min: 3, max: 10 })) {
       this.setError('아이디는 3~10자로 이뤄져야 합니다')
       return
@@ -61,8 +59,14 @@ class ChangeName extends Component {
     const { handleChange, handleChangeName, handleKeyPress } = this
     return (
       <Content title='회원정보 수정'>
+        <Input 
+          label='내 아이디'
+          value={username}
+          disabled
+          readOnly
+        />
         <Input
-          label='아이디'
+          label='변경할 아이디'
           placeholder={logged ? '변경할 아이디' : '로그인이 필요합니다'}
           disabled={!logged}
           autoFocus

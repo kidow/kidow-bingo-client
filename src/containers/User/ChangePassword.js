@@ -94,7 +94,7 @@ class ChangePassword extends Component {
         />
         <Input
           label='비밀번호 확인'
-          placeholder={logged && '비밀번호 확인'}
+          placeholder={logged ? '비밀번호 확인' : ''}
           type='password'
           name='passwordConfirm'
           value={passwordConfirm}
