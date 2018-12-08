@@ -25,4 +25,16 @@
       transition: .4s all;
     }
   }
+  .disabled {
+    width: 100%;
+    border: 1px solid $oc-gray-3;
+    outline: none;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background: #eee;
+    cursor: not-allowed;
+    color: $oc-gray-6;
+  }
 }

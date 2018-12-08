@@ -25,17 +25,7 @@
   }
 }
 
-.new-post {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 2rem;
-  .table {
-    @include row;
-    @include shadow(1);
-  }
-}
-
-.post-container {
-  width: 400px;
-  margin-right: 6rem;
+.table {
+  @include row;
+  @include shadow(2);
 }

@@ -1,63 +1,7 @@
-@import '~lib/styles/shadow';
-@import '~lib/styles/modules';
-
-@mixin input {
-  width: 120px;
-  height: 120px;
-  border: 1px solid $oc-teal-6;
-  text-align: center;
-  font-size: 1.2rem;
-  outline: none;
-  color: $oc-gray-8;
-}
-
-@mixin column {
-  display: flex;
-  .column-1 {
-    @include input
-  }
-  .column-2 {
-    @include input;
-  }
-  .column-3 {
-    @include input;
-  }
-  .column-4 {
-    @include input;
-  }
-  .column-5 {
-    @include input;
-  }
-}
-
-@mixin row {
-  background: white;
-  .row-1 {
-    @include column
-  }
-  .row-2 {
-    @include column
-  }
-  .row-3 {
-    @include column
-  }
-  .row-4 {
-    @include column
-  }
-  .row-5 {
-    @include column
-  }
-}
-
 .new-post {
   display: flex;
   justify-content: space-around;
-  .table {
-    @include row;
-    @include shadow(1);
+  .post-container {
+    width: 400px;
   }
-}
-
-.post-container {
-  width: 400px;
 }

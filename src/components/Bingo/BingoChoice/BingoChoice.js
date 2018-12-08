@@ -1,9 +1,9 @@
 import React from 'react';
 import './BingoChoice.scss'
 
-const BingoChoice = ({children}) => {
+const BingoChoice = ({children, ...rest}) => {
   return (
-    <div className='bingo-choice'>
+    <div className='bingo-choice' {...rest}>
       {children}
     </div>
   );

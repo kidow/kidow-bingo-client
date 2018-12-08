@@ -1,0 +1,58 @@
+@import '~lib/styles/modules';
+@import '~lib/styles/shadow';
+
+@mixin cell {
+  width: 80px;
+  height: 80px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  word-break: keep-all;
+  font-weight: 600;
+  color: white;
+}
+
+@mixin row {
+  display: flex;
+  .yes {
+    @include cell;
+    background: $oc-teal-8;
+    border: 1px solid $oc-teal-4;
+  }
+  .no {
+    @include cell;
+    border: 1px solid $oc-teal-4;
+  }
+}
+
+.bingo-table {
+  width: 400px;
+  margin: 0 auto;
+  div { @include row }
+}
+
+// @mixin cell {
+//   width: 80px;
+//   height: 80px;
+//   border: 1px solid $oc-teal-6;
+//   text-align: center;
+//   font-size: 0.3rem;
+//   
+// }
+
+// @mixin column {
+//   display: flex;
+//   div { @include cell }
+// }
+
+// @mixin row {
+//   div { @include column }
+// }
+
+// .bingo-table {
+//   width: 400px;
+//   @include row;
+//   @include shadow(1);
+// }

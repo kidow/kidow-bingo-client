@@ -15,4 +15,10 @@
   color: $oc-gray-2;
   padding: 2rem;
   font-size: 2rem;
+  word-break: keep-all;
+  text-align: center;
+}
+
+.none {
+  display: none;
 }

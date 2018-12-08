@@ -39,15 +39,18 @@ class NewPostContainer extends Component {
       || !cell51 || !cell52 || !cell53 || !cell54 || !cell55 
       || !title || !oneBingo || !twoBingo || !threeBingo) {
         PostActions.setError('모두 입력해주세요')
-    } else {
-      try {
-        await PostActions.writePost({
-          title, description, oneBingo, twoBingo, threeBingo, bingo
-        })
-        window.location.href = '/'
-      } catch (e) {
-        console.log(e)
-      }
+        return
+    }
+
+    
+
+    try {
+      await PostActions.writePost({
+        title, description, oneBingo, twoBingo, threeBingo, bingo
+      })
+      window.location.href = '/'
+    } catch (e) {
+      console.log(e)
     }
   }
 
