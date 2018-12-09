@@ -69,6 +69,12 @@ class PostListContainer extends Component {
     setTimeout(() => this.masonry.masonry.layout(), 0);
   }
 
+  handleShareClick = postId => {
+    const { PostsActions } = this.props
+    PostsActions.toggleShare(postId)
+    setTimeout(() => this.masonry.masonry.layout(), 0);
+  }
+
   handleRelayout = () => {
     setTimeout(() => this.masonry.masonry.layout(), 0);
   }
@@ -99,7 +105,7 @@ class PostListContainer extends Component {
   
   render() {
     const { loading, data, username } = this.props
-    const { handleToggleLike, handleCommentClick } = this
+    const { handleToggleLike, handleCommentClick, handleShareClick } = this
     return (
       <>
         {loading ? (
@@ -110,6 +116,7 @@ class PostListContainer extends Component {
             posts={data}
             onToggleLike={handleToggleLike}
             onCommentClick={handleCommentClick}
+            onShareClick={handleShareClick}
             username={username}
           />
         )}

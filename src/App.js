@@ -30,7 +30,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/auth' component={Auth} />
@@ -41,7 +41,7 @@ class App extends Component {
           <Route component={NotFound} />
         </Switch>
         <ToastContainer style={{ zIndex: 20 }} hideProgressBar position='bottom-right' />
-      </div>
+      </>
     );
   }
 }

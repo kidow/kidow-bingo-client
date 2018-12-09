@@ -4,13 +4,15 @@ import PostFooter from '../PostFooter';
 import { Link } from 'react-router-dom'
 import CommentBlockContainer from 'containers/Shared/CommentBlockContainer';
 import scuize from 'lib/scuize'
+import ShareBlockContainer from 'containers/Shared/ShareBlockContainer';
 
-const PostItem = ({post, onToggleLike, onCommentClick, username}) => {
+const PostItem = ({post, onToggleLike, onCommentClick, onShareClick, username}) => {
   const { _id, title, description, liked, likesCount, comments } = post.toJS()
   const toggleLike = () => onToggleLike({
     postId: _id,
     liked
   })
+  const shareClick = () => onShareClick(_id)
   const commentClick = () => onCommentClick(_id)
   return (
     <div className='post-item'>
@@ -22,8 +24,10 @@ const PostItem = ({post, onToggleLike, onCommentClick, username}) => {
         comments={comments}
         onToggleLike={toggleLike}
         onCommentClick={commentClick}
+        onShareClick={shareClick}
         username={username}
       />
+      <ShareBlockContainer post={post} _id={_id}/>
       <CommentBlockContainer post={post}/>
     </div>
   );

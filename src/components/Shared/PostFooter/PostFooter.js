@@ -4,7 +4,14 @@ import './PostFooter.scss'
 import { MdThumbUp } from 'react-icons/md'
 import { IoMdChatbubbles, IoMdShare, IoMdCreate, IoIosTrash } from 'react-icons/io'
 
-const PostFooter = ({likesCount = 0, comments = [], onToggleLike, onCommentClick, username}) => {
+const PostFooter = ({
+  likesCount = 0, 
+  comments = [], 
+  onToggleLike, 
+  onCommentClick, 
+  onShareClick, 
+  username
+}) => {
   return (
     <div className='post-footer'>
       <div className='likes'>
@@ -20,7 +27,7 @@ const PostFooter = ({likesCount = 0, comments = [], onToggleLike, onCommentClick
           </>
         )}
       </div>
-      <IoMdShare className='share'/>
+      <IoMdShare className='share' onClick={onShareClick}/>
       <div className='comments' >
         {username ? (
           <>

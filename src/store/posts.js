@@ -12,6 +12,7 @@ const LIKE_POST = 'posts/LIKE_POST'
 const DISLIKE_POST = 'posts/DISLIKE_POST'
 
 const TOGGLE_COMMENT = 'posts/TOGGLE_COMMENT'
+const TOGGLE_SHARE = 'posts/TOGGLE_SHARE'
 const CHANGE_COMMENT_INPUT = 'posts/CHANGE_COMMENT_INPUT'
 const COMMENT = 'posts/COMMENT'
 
@@ -23,6 +24,7 @@ export const likePost = createAction(LIKE_POST, api.like, payload => payload)
 export const dislikePost = createAction(DISLIKE_POST, api.dislike, payload => payload)
 
 export const toggleComment = createAction(TOGGLE_COMMENT)
+export const toggleShare = createAction(TOGGLE_SHARE)
 export const changeCommentInput = createAction(CHANGE_COMMENT_INPUT)
 export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId)
 
@@ -34,6 +36,11 @@ const initialState = Map({
     _postId: Map({
       visible: false,
       value: ''
+    })
+  }),
+  share: Map({
+    _postId: Map({
+      visible: false
     })
   })
 })
@@ -104,6 +111,9 @@ export default handleActions({
       visible: true,
       value: ''
     }))
+  },
+  [TOGGLE_SHARE]: (state, action) => {
+    return state.updateIn(['share', action.payload, 'visible'], visible => !visible)
   },
   [CHANGE_COMMENT_INPUT]: (state, action) => {
     const { postId, value } = action.payload

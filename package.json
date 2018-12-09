@@ -11,6 +11,7 @@
     "open-color": "^1.6.3",
     "query-string": "^6.2.0",
     "react": "^16.6.3",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.6.3",
     "react-icons": "^3.2.2",
     "react-masonry-component": "^6.2.1",
