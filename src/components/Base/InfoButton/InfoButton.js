@@ -7,11 +7,11 @@ const activeStyle = {
   backgroundColor: '#15aabf'
 }
 
-const InfoButton = ({onLogout, username}) => {
+const InfoButton = ({onLogout, _id}) => {
   return (
     <div className='info-button'>
       <NavLink 
-        to={`/user/${username}/changeName`} 
+        to={`/user/${_id}/changeName`} 
         className='info'
         activeStyle={activeStyle}
       >

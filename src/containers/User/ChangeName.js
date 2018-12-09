@@ -31,13 +31,15 @@ class ChangeName extends Component {
   handleChangeName = async () => {
     const { UserActions, form, history } = this.props
     const { id } = form.toJS()
+
     if (!isLength(id, { min: 3, max: 10 })) {
       this.setError('아이디는 3~10자로 이뤄져야 합니다')
       return
     }
+    
     try {
       await UserActions.changeName(id)
-      storage.change('loggedInfo', 'username', id)
+      await storage.change('loggedInfo', 'username', id)
       history.push('/')
     } catch (e) {
       console.log(e)
@@ -57,7 +59,7 @@ class ChangeName extends Component {
   }
 
   render() {
-    const { username, logged, error } = this.props
+    const { username, logged, error, _id } = this.props
     const { id } = this.props.form.toJS()
     const { handleChange, handleChangeName, handleKeyPress } = this
     return (
@@ -80,7 +82,7 @@ class ChangeName extends Component {
         />
         {error && <Error>{error}</Error>}
         <Button onClick={handleChangeName}>변경하기</Button>
-        <SwitchLink to={`/user/${username}/changePassword`}>비밀변호 변경하기</SwitchLink>
+        <SwitchLink to={`/user/${_id}/changePassword`}>비밀변호 변경하기</SwitchLink>
       </Content>
     );
   }
@@ -91,7 +93,8 @@ export default connect(
     username: state.user.getIn(['loggedInfo', 'username']),
     logged: state.user.get('logged'),
     form: state.user.getIn(['changeName', 'form']),
-    error: state.user.getIn(['changeName', 'error'])
+    error: state.user.getIn(['changeName', 'error']),
+    _id: state.user.getIn(['loggedInfo', '_id'])
   }),
   dispatch => ({
     UserActions: bindActionCreators(userActions, dispatch)

@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import * as userActions from 'store/user'
 
 import isLength from 'validator/lib/isLength'
+import storage from 'lib/storage'
 
 class ChangePassword extends Component {
   handleChange = e => {
@@ -28,7 +29,7 @@ class ChangePassword extends Component {
   }
 
   handleChangePassword = async () => {
-    const { form, UserActions } = this.props
+    const { form, UserActions, loggedInfo, history } = this.props
     const { password, passwordConfirm } = form.toJS()
 
     if (password !== passwordConfirm) {
@@ -43,6 +44,8 @@ class ChangePassword extends Component {
 
     try {
       await UserActions.changePassword(password)
+      await storage.change('loggedInfo', 'password', loggedInfo.get('password'))
+      history.push('/')
     } catch (e) {
       console.log(e)
       this.setError('알 수 없는 오류가 발생했습니다')
@@ -77,7 +80,8 @@ class ChangePassword extends Component {
   }
 
   render() {
-    const { username, logged, error } = this.props
+    const { logged, error, loggedInfo } = this.props
+    const { _id } = loggedInfo.toJS()
     const { password, passwordConfirm } = this.props.form.toJS()
     const { handleChange, handleChangePassword, handleKeyPress, handleLeave } = this
     return (
@@ -104,7 +108,7 @@ class ChangePassword extends Component {
         {error && <Error>{error}</Error>}
         <Button onClick={handleChangePassword}>변경하기</Button>
         {logged && <Button red onClick={handleLeave}>탈퇴하기</Button>}
-        <SwitchLink to={`/user/${username}/changeName`}>아이디 변경하기</SwitchLink>
+        <SwitchLink to={`/user/${_id}/changeName`}>아이디 변경하기</SwitchLink>
       </Content>
     );
   }
@@ -112,10 +116,10 @@ class ChangePassword extends Component {
 
 export default connect(
   state => ({
-    username: state.user.getIn(['loggedInfo', 'username']),
     logged: state.user.get('logged'),
     form: state.user.getIn(['changePassword', 'form']),
-    error: state.user.getIn(['changePassword', 'error'])
+    error: state.user.getIn(['changePassword', 'error']),
+    loggedInfo: state.user.get('loggedInfo')
   }),
   dispatch => ({
     UserActions: bindActionCreators(userActions, dispatch)

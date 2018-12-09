@@ -33,7 +33,8 @@ export const setError = createAction(SET_ERROR)
 
 const initialState = Map({
   loggedInfo: Map({
-    username: ''
+    username: '',
+    password: ''
   }),
   logged: false,
   validated: false,
@@ -75,8 +76,8 @@ export default handleActions({
   ...pender({
     type: CHANGE_NAME,
     onSuccess: (state, action) => {
-      const { data: id } = action.payload
-      return state.setIn(['loggedInfo', 'username'], id)
+      const { data: username } = action.payload
+      return state.setIn(['loggedInfo', 'username'], username)
     }
   }),
   [SET_ERROR]: (state, action) => {
@@ -86,5 +87,12 @@ export default handleActions({
   [INITIALIZE_FORM]: (state, action) => {
     const initialForm = initialState.get(action.payload)
     return state.set(action.payload, initialForm)
-  }
+  },
+  ...pender({
+    type: CHANGE_PASSWORD,
+    onSuccess: (state, action) => {
+      const { data: password } = action.payload
+      return state.setIn(['loggedInfo', 'password'], password)
+    }
+  })
 }, initialState)

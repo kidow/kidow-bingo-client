@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import { Home, Auth, New, User, Posts } from 'pages';
+import { Home, Auth, New, User, Posts, Bingo, NotFound } from 'pages';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as UserActions from 'store/user'
 
 import storage from 'lib/storage'
-import Bingo from 'pages/Bingo';
-import NotFound from 'pages/NotFound';
 
 class App extends Component {
   initializeUserInfo = async () => {
     const loggedInfo = storage.get('loggedInfo')
-    console.log(loggedInfo)
     if (!loggedInfo) return
 
     const { UserActions } = this.props
