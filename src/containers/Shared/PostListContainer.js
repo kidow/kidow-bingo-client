@@ -12,9 +12,9 @@ class PostListContainer extends Component {
   prev = null
 
   load = async () => {
-    const { PostsActions, _id } = this.props
+    const { PostsActions, username } = this.props
     try {
-      await PostsActions.loadPost(_id)
+      await PostsActions.loadPost(username)
       const { next } = this.props
       if (next) {
         await PostsActions.prefetchPost(next)
@@ -74,8 +74,8 @@ class PostListContainer extends Component {
   }
 
   validate = () => {
-    const { loggedInfo, _id } = this.props
-    if (_id && loggedInfo.get('_id') !== _id) {
+    const { loggedInfo, username } = this.props
+    if (username && loggedInfo.get('username') !== username) {
       window.location.href = '/'
     }
   }
@@ -87,7 +87,7 @@ class PostListContainer extends Component {
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    if (prevProps._id !== this.props._id) {
+    if (prevProps.username !== this.props.username) {
       this.load()
     }
   };
@@ -96,6 +96,7 @@ class PostListContainer extends Component {
     this.validate()
     window.removeEventListener('scroll', this.handleScroll)
   }
+  
   render() {
     const { loading, data } = this.props
     const { handleToggleLike, handleCommentClick } = this

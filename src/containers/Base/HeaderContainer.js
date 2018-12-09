@@ -20,13 +20,13 @@ class HeaderContainer extends Component {
   }
 
   render() {
-    const { logged, _id } = this.props
+    const { logged, username } = this.props
     const { handleLogout } = this
     return (
       <Header 
         logged={logged} 
         onLogout={handleLogout}
-        _id={_id}
+        username={username}
       />
     );
   }
@@ -35,7 +35,7 @@ class HeaderContainer extends Component {
 export default connect(
   state => ({
     logged: state.user.get('logged'),
-    _id: state.user.getIn(['loggedInfo', '_id'])
+    username: state.user.getIn(['loggedInfo', 'username'])
   }),
   dispatch => ({
     UserActions: bindActionCreators(userActions, dispatch)

@@ -32,13 +32,13 @@ class ChangePassword extends Component {
     const { form, UserActions, loggedInfo, history } = this.props
     const { password, passwordConfirm } = form.toJS()
 
-    if (password !== passwordConfirm) {
-      this.setError('비밀번호가 일치하지 않습니다')
+    if (!isLength(password, { min: 6 })) {
+      this.setError('비밀번호는 6자리 이상 입력해주세요')
       return
     }
 
-    if (!isLength(password, { min: 6 })) {
-      this.setError('비밀번호는 6자리 이상 입력해주세요')
+    if (password !== passwordConfirm) {
+      this.setError('비밀번호가 일치하지 않습니다')
       return
     }
 
@@ -53,8 +53,13 @@ class ChangePassword extends Component {
   }
 
   handleLeave = async () => {
-    const { UserActions, form } = this.props
+    const { UserActions, form, history } = this.props
     const { password, passwordConfirm } = form.toJS()
+
+    if (!isLength(password, { min: 6 })) {
+      this.setError('비밀번호를 제대로 입력해주세요')
+      return
+    }
 
     if (password !== passwordConfirm) {
       this.setError('비밀번호가 일치하지 않습니다')
@@ -62,9 +67,12 @@ class ChangePassword extends Component {
     }
 
     try {
-      await UserActions.leave()
+      await UserActions.leave(password)
+      // storage.remove('loggedInfo')
+      // history.push('/')
     } catch (e) {
       console.log(e)
+      this.setError('알 수 없는 오류가 발생했습니다')
     }
   }
 
@@ -81,7 +89,7 @@ class ChangePassword extends Component {
 
   render() {
     const { logged, error, loggedInfo } = this.props
-    const { _id } = loggedInfo.toJS()
+    const { username } = loggedInfo.toJS()
     const { password, passwordConfirm } = this.props.form.toJS()
     const { handleChange, handleChangePassword, handleKeyPress, handleLeave } = this
     return (
@@ -108,7 +116,7 @@ class ChangePassword extends Component {
         {error && <Error>{error}</Error>}
         <Button onClick={handleChangePassword}>변경하기</Button>
         {logged && <Button red onClick={handleLeave}>탈퇴하기</Button>}
-        <SwitchLink to={`/user/${_id}/changeName`}>아이디 변경하기</SwitchLink>
+        <SwitchLink to={`/user/${username}/changeName`}>아이디 변경하기</SwitchLink>
       </Content>
     );
   }

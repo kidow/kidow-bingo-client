@@ -7,11 +7,11 @@ import { connect } from 'react-redux'
 class Posts extends React.Component {
   render() {
     const { match, logged } = this.props
-    const { id } = match.params
+    const { username } = match.params
     if (!logged) return null
     return (
       <PageWrapper>
-        <PostListContainer id={id} />
+        <PostListContainer username={username} />
       </PageWrapper>
     );
   }

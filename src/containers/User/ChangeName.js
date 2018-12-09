@@ -59,7 +59,7 @@ class ChangeName extends Component {
   }
 
   render() {
-    const { username, logged, error, _id } = this.props
+    const { username, logged, error, loggedInfo } = this.props
     const { id } = this.props.form.toJS()
     const { handleChange, handleChangeName, handleKeyPress } = this
     return (
@@ -82,7 +82,7 @@ class ChangeName extends Component {
         />
         {error && <Error>{error}</Error>}
         <Button onClick={handleChangeName}>변경하기</Button>
-        <SwitchLink to={`/user/${_id}/changePassword`}>비밀변호 변경하기</SwitchLink>
+        <SwitchLink to={`/user/${loggedInfo.get('username')}/changePassword`}>비밀변호 변경하기</SwitchLink>
       </Content>
     );
   }
@@ -94,7 +94,7 @@ export default connect(
     logged: state.user.get('logged'),
     form: state.user.getIn(['changeName', 'form']),
     error: state.user.getIn(['changeName', 'error']),
-    _id: state.user.getIn(['loggedInfo', '_id'])
+    loggedInfo: state.user.get('loggedInfo')
   }),
   dispatch => ({
     UserActions: bindActionCreators(userActions, dispatch)

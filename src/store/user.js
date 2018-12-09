@@ -94,5 +94,9 @@ export default handleActions({
       const { data: password } = action.payload
       return state.setIn(['loggedInfo', 'password'], password)
     }
-  })
+  }),
+  // ...pender({
+  //   type: LEAVE,
+  //   onSuccess: (state, action) => initialState
+  // })
 }, initialState)

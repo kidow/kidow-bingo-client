@@ -8,7 +8,7 @@ const activeStyle = {
   backgroundColor: '#12b886',
 }
 
-const Header = ({_id, logged, onLogout}) => {
+const Header = ({username, logged, onLogout}) => {
   return (
     <div className='header'>
       <div className='contents'>
@@ -19,11 +19,11 @@ const Header = ({_id, logged, onLogout}) => {
           ) : (
             <Link to='/auth/login' className='new'>새 빙고 만들기</Link>
           )}
-          {logged && <NavLink className='my' activeStyle={logged && activeStyle} to={`/posts/${_id}`}>내가 만든 빙고</NavLink>}
+          {logged && <NavLink className='my' activeStyle={logged && activeStyle} to={`/posts/${username}`}>내가 만든 빙고</NavLink>}
         </div>
         <SearchBar />
         {logged ? (
-          <InfoButton _id={_id} onLogout={onLogout}/>
+          <InfoButton username={username} onLogout={onLogout}/>
         ) : (
           <LoginButton />
         )}
