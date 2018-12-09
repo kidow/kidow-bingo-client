@@ -12,39 +12,39 @@ const Table = ({
   return (
     <div className='table'>
       <div className='row-1'>
-        <input name='cell11' onChange={onBingoChange} value={cell11}/>
-        <input name='cell12' onChange={onBingoChange} value={cell12}/>
-        <input name='cell13' onChange={onBingoChange} value={cell13}/>
-        <input name='cell14' onChange={onBingoChange} value={cell14}/>
-        <input name='cell15' onChange={onBingoChange} value={cell15}/>
+        <textarea name='cell11' onChange={onBingoChange} value={cell11}/>
+        <textarea name='cell12' onChange={onBingoChange} value={cell12}/>
+        <textarea name='cell13' onChange={onBingoChange} value={cell13}/>
+        <textarea name='cell14' onChange={onBingoChange} value={cell14}/>
+        <textarea name='cell15' onChange={onBingoChange} value={cell15}/>
       </div>
       <div className='row-2'>
-        <input name='cell21' onChange={onBingoChange} value={cell21}/>
-        <input name='cell22' onChange={onBingoChange} value={cell22}/>
-        <input name='cell23' onChange={onBingoChange} value={cell23}/>
-        <input name='cell24' onChange={onBingoChange} value={cell24}/>
-        <input name='cell25' onChange={onBingoChange} value={cell25}/>
+        <textarea name='cell21' onChange={onBingoChange} value={cell21}/>
+        <textarea name='cell22' onChange={onBingoChange} value={cell22}/>
+        <textarea name='cell23' onChange={onBingoChange} value={cell23}/>
+        <textarea name='cell24' onChange={onBingoChange} value={cell24}/>
+        <textarea name='cell25' onChange={onBingoChange} value={cell25}/>
       </div>
       <div className='row-3'>
-        <input name='cell31' onChange={onBingoChange} value={cell31}/>
-        <input name='cell32' onChange={onBingoChange} value={cell32}/>
-        <input name='cell33' onChange={onBingoChange} value={cell33}/>
-        <input name='cell34' onChange={onBingoChange} value={cell34}/>
-        <input name='cell35' onChange={onBingoChange} value={cell35}/>
+        <textarea name='cell31' onChange={onBingoChange} value={cell31}/>
+        <textarea name='cell32' onChange={onBingoChange} value={cell32}/>
+        <textarea name='cell33' onChange={onBingoChange} value={cell33}/>
+        <textarea name='cell34' onChange={onBingoChange} value={cell34}/>
+        <textarea name='cell35' onChange={onBingoChange} value={cell35}/>
       </div>
       <div className='row-4'>
-        <input name='cell41' onChange={onBingoChange} value={cell41}/>
-        <input name='cell42' onChange={onBingoChange} value={cell42}/>
-        <input name='cell43' onChange={onBingoChange} value={cell43}/>
-        <input name='cell44' onChange={onBingoChange} value={cell44}/>
-        <input name='cell45' onChange={onBingoChange} value={cell45}/>
+        <textarea name='cell41' onChange={onBingoChange} value={cell41}/>
+        <textarea name='cell42' onChange={onBingoChange} value={cell42}/>
+        <textarea name='cell43' onChange={onBingoChange} value={cell43}/>
+        <textarea name='cell44' onChange={onBingoChange} value={cell44}/>
+        <textarea name='cell45' onChange={onBingoChange} value={cell45}/>
       </div>
       <div className='row-5'>
-        <input name='cell51' onChange={onBingoChange} value={cell51}/>
-        <input name='cell52' onChange={onBingoChange} value={cell52}/>
-        <input name='cell53' onChange={onBingoChange} value={cell53}/>
-        <input name='cell54' onChange={onBingoChange} value={cell54}/>
-        <input name='cell55' onChange={onBingoChange} value={cell55}/>
+        <textarea name='cell51' onChange={onBingoChange} value={cell51}/>
+        <textarea name='cell52' onChange={onBingoChange} value={cell52}/>
+        <textarea name='cell53' onChange={onBingoChange} value={cell53}/>
+        <textarea name='cell54' onChange={onBingoChange} value={cell54}/>
+        <textarea name='cell55' onChange={onBingoChange} value={cell55}/>
       </div>
     </div>
   );

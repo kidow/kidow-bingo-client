@@ -75,8 +75,8 @@ export default handleActions({
   ...pender({
     type: CHANGE_NAME,
     onSuccess: (state, action) => {
-      const { data: username } = action.payload
-      return state.setIn(['loggedInfo', 'username'], username)
+      const { data: id } = action.payload
+      return state.setIn(['loggedInfo', 'username'], id)
     }
   }),
   [SET_ERROR]: (state, action) => {

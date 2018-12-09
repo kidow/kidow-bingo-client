@@ -89,7 +89,7 @@ class Login extends Component {
           onChange={handleChange}
           onKeyPress={handleKeyPress}
         />
-        {error && <Error>에러</Error>}
+        {error && <Error>{error}</Error>}
         <Button onClick={handleLocalLogin}>로그인</Button>
         <SwitchLink to='/auth/register'>회원가입</SwitchLink>
       </Content>

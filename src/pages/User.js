@@ -4,12 +4,11 @@ import { Route } from 'react-router-dom'
 import ChangeName from 'containers/User/ChangeName';
 import ChangePassword from 'containers/User/ChangePassword';
 
-const User = ({match}) => {
-  const { name } = match.params
+const User = () => {
   return (
     <PageWrapper>
-      <Route path='/user/:name/changeName' component={ChangeName} name={name}/>
-      <Route path='/user/:name/changePassword' component={ChangePassword} name={name}/>
+      <Route path='/user/:username/changeName' component={ChangeName}/>
+      <Route path='/user/:username/changePassword' component={ChangePassword}/>
     </PageWrapper>
   );
 };

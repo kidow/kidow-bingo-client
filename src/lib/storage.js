@@ -19,5 +19,12 @@ export default {
     if (!localStorage) return null
 
     if (localStorage[key]) localStorage.removeItem(key)
+  },
+  change: (item, key, value) => {
+    if (!localStorage) return null
+
+    const newValue = JSON.parse(localStorage.getItem(item))
+    newValue[key] = value
+    localStorage.setItem(item, JSON.stringify(newValue))
   }
 }

@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import * as userActions from 'store/user'
 
 import isLength from 'validator/lib/isLength'
+import storage from 'lib/storage'
 
 class ChangeName extends Component {
   handleChange = e => {
@@ -28,7 +29,7 @@ class ChangeName extends Component {
   }
 
   handleChangeName = async () => {
-    const { UserActions, form } = this.props
+    const { UserActions, form, history } = this.props
     const { id } = form.toJS()
     if (!isLength(id, { min: 3, max: 10 })) {
       this.setError('아이디는 3~10자로 이뤄져야 합니다')
@@ -36,6 +37,8 @@ class ChangeName extends Component {
     }
     try {
       await UserActions.changeName(id)
+      storage.change('loggedInfo', 'username', id)
+      history.push('/')
     } catch (e) {
       console.log(e)
       this.setError('알 수 없는 오류가 발생했습니다')
