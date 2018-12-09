@@ -98,7 +98,7 @@ class PostListContainer extends Component {
   }
   
   render() {
-    const { loading, data } = this.props
+    const { loading, data, username } = this.props
     const { handleToggleLike, handleCommentClick } = this
     return (
       <>
@@ -110,6 +110,7 @@ class PostListContainer extends Component {
             posts={data}
             onToggleLike={handleToggleLike}
             onCommentClick={handleCommentClick}
+            username={username}
           />
         )}
       </>

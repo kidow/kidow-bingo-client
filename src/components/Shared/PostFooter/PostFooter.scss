@@ -29,9 +29,12 @@
       }
     }
     .active {
-      color: $oc-teal-5;
+      color: $oc-teal-6;
       &:hover {
-        color: $oc-teal-3;
+        color: $oc-teal-4;
+      }
+      &:active {
+        color: $oc-teal-5;
       }
     }
   }

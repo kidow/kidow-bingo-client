@@ -2,8 +2,10 @@ import React from 'react';
 import './PostItem.scss'
 import PostFooter from '../PostFooter';
 import { Link } from 'react-router-dom'
+import CommentBlockContainer from 'containers/Shared/CommentBlockContainer';
+import scuize from 'lib/scuize'
 
-const PostItem = ({post, onToggleLike, onCommentClick}) => {
+const PostItem = ({post, onToggleLike, onCommentClick, username}) => {
   const { _id, title, description, liked, likesCount, comments } = post.toJS()
   const toggleLike = () => onToggleLike({
     postId: _id,
@@ -20,9 +22,13 @@ const PostItem = ({post, onToggleLike, onCommentClick}) => {
         comments={comments}
         onToggleLike={toggleLike}
         onCommentClick={commentClick}
+        username={username}
       />
+      <CommentBlockContainer post={post}/>
     </div>
   );
 };
 
-export default PostItem;
+export default scuize(PostItem, function (nextProps, nextState) {
+  return this.props.post !== nextProps.post
+});

@@ -20,8 +20,8 @@ const PostFooter = ({likesCount = 0, comments = [], onToggleLike, onCommentClick
           </>
         )}
       </div>
-      {!username && <IoMdShare className='share'/>}
-      <div className='comments' onClick={onCommentClick}>
+      <IoMdShare className='share'/>
+      <div className='comments' >
         {username ? (
           <>
             <IoIosTrash className='svg'/>
@@ -29,8 +29,8 @@ const PostFooter = ({likesCount = 0, comments = [], onToggleLike, onCommentClick
           </>
         ) : (
           <>
-            <IoMdChatbubbles />
-            <span>댓글 {comments.length}개</span>
+            <IoMdChatbubbles onClick={onCommentClick}/>
+            <span onClick={onCommentClick}>댓글 {comments.length}개</span>
           </>
         )}
       </div>

@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import * as UserActions from 'store/user'
 
 import storage from 'lib/storage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 class App extends Component {
   initializeUserInfo = async () => {
@@ -28,15 +30,18 @@ class App extends Component {
   }
   render() {
     return (
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route path='/auth' component={Auth}/>
-        <Route path='/new' component={New}/>
-        <Route path='/user/:username' component={User}/>
-        <Route path='/post/:id' component={Bingo}/>
-        <Route path='/posts/:username' component={Posts}/>
-        <Route component={NotFound}/>
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/auth' component={Auth} />
+          <Route path='/new' component={New} />
+          <Route path='/user/:username' component={User} />
+          <Route path='/post/:id' component={Bingo} />
+          <Route path='/posts/:username' component={Posts} />
+          <Route component={NotFound} />
+        </Switch>
+        <ToastContainer style={{ zIndex: 20 }} hideProgressBar position='bottom-right' />
+      </div>
     );
   }
 }

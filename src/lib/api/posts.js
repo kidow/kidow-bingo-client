@@ -12,4 +12,4 @@ export const next = url => axios.get(url)
 export const like = postId => axios.post(`/api/posts/${postId}/likes`)
 export const dislike = postId => axios.delete(`/api/posts/${postId}/likes`)
 
-export const comment = ({ postId, text }) => axios.post(`api/posts/${postId}/comments`, { text })
+export const comment = ({postId, text}) => axios.post(`api/comments/${postId}/comments`, {text})
