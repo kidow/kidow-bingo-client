@@ -12,7 +12,7 @@ class Posts extends React.Component {
     if (!logged) return null
     return (
       <PageWrapper>
-        <SearchWrapper />
+        <SearchWrapper username={username}/>
         <PostListContainer username={username} />
       </PageWrapper>
     );

@@ -3,10 +3,10 @@ import './SearchWrapper.scss'
 import SearchBarContainer from 'containers/Base/SearchBarContainer';
 import NavBarContainer from 'containers/Base/NavBarContainer';
 
-const SearchWrapper = () => {
+const SearchWrapper = ({username}) => {
   return (
     <div className='search-wrapper'>
-      <NavBarContainer />
+      <NavBarContainer username={username}/>
       <SearchBarContainer />
     </div>
   );
