@@ -16,7 +16,7 @@ const style = {
 
 Modal.setAppElement('#root');
 
-const PostModal = ({isOpen, onRequestClose}) => {
+const PostModal = ({isOpen, onRequestClose, onRemovePost}) => {
   return (
     <Modal
       style={style}
@@ -26,7 +26,7 @@ const PostModal = ({isOpen, onRequestClose}) => {
       <h2>정말 삭제하시겠습니까?</h2>
       <h4>삭제하면 다시 복구할 수 없습니다</h4>
       <div>
-        <Button red>예</Button>
+        <Button red onClick={onRemovePost}>예</Button>
         <Button onClick={onRequestClose}>아니오</Button>
       </div>
     </Modal>

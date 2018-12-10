@@ -16,8 +16,8 @@ const TOGGLE_SHARE = 'posts/TOGGLE_SHARE'
 const CHANGE_COMMENT_INPUT = 'posts/CHANGE_COMMENT_INPUT'
 const COMMENT = 'posts/COMMENT'
 
-const UPDATE = 'posts/UPDATE'
-const REMOVE = 'posts/REMOVE'
+const UPDATE_POST = 'posts/UPDATE_POST'
+const REMOVE_POST = 'posts/REMOVE_POST'
 
 export const loadPost = createAction(LOAD_POST, api.list)
 export const prefetchPost = createAction(PREFETCH_POST, api.next)
@@ -31,8 +31,8 @@ export const toggleShare = createAction(TOGGLE_SHARE)
 export const changeCommentInput = createAction(CHANGE_COMMENT_INPUT)
 export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId)
 
-export const update = createAction(UPDATE, api.update)
-export const remove = createAction(REMOVE, api.remove)
+export const updatePost = createAction(UPDATE_POST, api.update)
+export const removePost = createAction(REMOVE_POST, api.remove, payload => payload)
 
 const initialState = Map({
   next: '',
@@ -134,5 +134,15 @@ export default handleActions({
       const index = state.get('data').findIndex(post => post.get('_id') === action.meta)
       return state.setIn(['data', index, 'comments'], fromJS(action.payload.data))
     }
-  })
+  }),
+  ...pender({
+    type: UPDATE_POST
+  }),
+  // ...pender({
+  //   type: REMOVE_POST,
+  //   onPending: (state, action) => {
+  //     const index = state.get('data').findIndex(post => post.get('_id') === action.meta)
+  //     return 
+  //   }
+  // })
 }, initialState) 

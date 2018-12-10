@@ -25,12 +25,13 @@ class PostModalContainer extends Component {
   }
 
   render() {
-    const { isOpen } = this.props
+    const { isOpen, onRemovePost } = this.props
     const { handleRequestClose } = this
     return (
       <PostModal
         isOpen={isOpen}
         onRequestClose={handleRequestClose}
+        onRemovePost={onRemovePost}
       />
     );
   }

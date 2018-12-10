@@ -10,7 +10,8 @@ const PostList = ({
   onCommentClick, 
   onShareClick,
   username,
-  onDeleteModal
+  onDeleteModal,
+  onRemovePost
 }) => {
   const postList = posts.map(post => 
     <PostItem 
@@ -21,6 +22,7 @@ const PostList = ({
       onShareClick={onShareClick}
       username={username}
       onDeleteModal={onDeleteModal}
+      onRemovePost={onRemovePost}
     />
   )
   return (

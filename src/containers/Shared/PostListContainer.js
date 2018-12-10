@@ -87,8 +87,14 @@ class PostListContainer extends Component {
     }
   }
 
-  handleUpdate = () => {
+  handleUpdatePost = postId => {
     
+  }
+
+  handleRemovePost = postId => {
+    const { PostsActions } = this.props
+    PostsActions.removePost(postId)
+    window.location.reload()
   }
 
   handleDeleteModal = () => {
@@ -118,7 +124,13 @@ class PostListContainer extends Component {
   
   render() {
     const { loading, data, username } = this.props
-    const { handleToggleLike, handleCommentClick, handleShareClick, handleDeleteModal } = this
+    const { 
+      handleToggleLike, 
+      handleCommentClick, 
+      handleShareClick, 
+      handleDeleteModal,
+      handleRemovePost
+    } = this
     return (
       <>
         {loading ? (
@@ -132,6 +144,7 @@ class PostListContainer extends Component {
             onShareClick={handleShareClick}
             username={username}
             onDeleteModal={handleDeleteModal}
+            onRemovePost={handleRemovePost}
           />
         )}
       </>
