@@ -18,7 +18,7 @@
     color: white;
     transition: .2s all;
   }
-  @include media("<tablet") {
+  @media (max-width: 512px) {
     display: none;
   }
 }
@@ -77,6 +77,9 @@
           background: $oc-teal-8;
         }
       }
+    }
+    .spacer {
+      flex-grow: 1;
     }
   }
   .gradient-border {

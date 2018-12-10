@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageWrapper } from 'components/Layouts';
 import PostListContainer from 'containers/Shared/PostListContainer';
+import { SearchWrapper } from 'components/Layouts';
 
 import { connect } from 'react-redux'
 
@@ -11,6 +12,7 @@ class Posts extends React.Component {
     if (!logged) return null
     return (
       <PageWrapper>
+        <SearchWrapper />
         <PostListContainer username={username} />
       </PageWrapper>
     );

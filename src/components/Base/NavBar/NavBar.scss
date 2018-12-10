@@ -1,0 +1,23 @@
+@import '~lib/styles/modules';
+@import '~lib/styles/shadow';
+
+.nav-bar {
+  display: flex;
+  div {
+    height: 32px;
+    font-size: 0.9rem;
+    color: $oc-teal-6;
+    background: white;
+    padding: 0.5rem;
+    @include shadow(0);
+    cursor: pointer;
+    &:hover {
+      background: $oc-teal-5;
+      color: white;
+      @include shadow(1);
+    }
+    &:active {
+      background: $oc-teal-7;
+    }
+  }
+}

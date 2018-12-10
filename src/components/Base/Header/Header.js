@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import './Header.scss'
-import { LoginButton, InfoButton, SearchBar } from 'components/Base'
+import { LoginButton, InfoButton } from 'components/Base'
 
 const activeStyle = {
   color: 'white',
@@ -21,7 +21,7 @@ const Header = ({username, logged, onLogout}) => {
           )}
           {logged && <NavLink className='my' activeStyle={logged && activeStyle} to={`/posts/${username}`}>내가 만든 빙고</NavLink>}
         </div>
-        <SearchBar />
+        <div className='spacer'/>
         {logged ? (
           <InfoButton username={username} onLogout={onLogout}/>
         ) : (

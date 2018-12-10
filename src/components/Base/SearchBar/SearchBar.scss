@@ -1,7 +1,7 @@
 @import '~lib/styles/modules';
 
 .search-bar {
-  flex-grow: 1;
+  margin-bottom: 1rem;
   input {
     margin-left: 1rem;
     padding: 0.5rem;
@@ -10,11 +10,8 @@
     letter-spacing: 1px;
     font-size: 0.8rem;
     font-weight: 400;
-    @media (max-width: 812px) { 
-      width: 100%;
+    @media (max-width: 812px) {
       margin-left: 0;
-      height: 3rem;
-      font-size: 1.2rem;
       letter-spacing: 0;
     }
     &:focus {
@@ -24,6 +21,7 @@
     }
     &::placeholder {
       font-size: 0.8rem;
+      color: $oc-gray-4;
       @media (max-width: 812px) {
         padding-top: 1rem;
       }
