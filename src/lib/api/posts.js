@@ -2,23 +2,23 @@ import axios from 'axios'
 
 export const write = ({
   bingo, title, description, oneBingo, twoBingo, threeBingo
-}) => axios.post('/api/posts/', {
+}) => axios.post('/posts/', {
   bingo, title, description, oneBingo, twoBingo, threeBingo
 })
-export const list = username => axios.get('/api/posts' + (username ? `?username=${username}` : ''))
-export const getData = id => axios.get(`/api/posts/${id}`)
+export const list = username => axios.get('/posts' + (username ? `?username=${username}` : ''))
+export const getData = id => axios.get(`/posts/${id}`)
 
 export const next = url => axios.get(url)
-export const like = postId => axios.post(`/api/posts/${postId}/likes`)
-export const dislike = postId => axios.delete(`/api/posts/${postId}/likes`)
+export const like = postId => axios.post(`/posts/${postId}/likes`)
+export const dislike = postId => axios.delete(`/posts/${postId}/likes`)
 
-export const comment = ({postId, text}) => axios.post(`api/comments/${postId}/comments`, {text})
+export const comment = ({postId, text}) => axios.post(`/posts/${postId}/comments`, {text})
 
 export const update = ({
   bingo, title, description, oneBingo, twoBingo, threeBingo, postId
-}) => axios.patch(`/api/posts/${postId}/update`, {
+}) => axios.patch(`/posts/${postId}/update`, {
   bingo, title, description, oneBingo, twoBingo, threeBingo, postId
 })
-export const remove = postId => axios.post(`/api/posts/${postId}/delete`)
+export const remove = postId => axios.post(`/posts/${postId}/delete`)
 
-export const search = title => axios.get(`/api/posts/search/${title}`)
+export const search = title => axios.get(`/posts/search/${title}`)

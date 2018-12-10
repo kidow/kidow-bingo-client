@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export const logout = () => axios.post('/api/users/logout')
-export const checkStatus = () => axios.get('/api/users/check')
+export const logout = () => axios.post('/users/logout')
+export const checkStatus = () => axios.get('/users/check')
 
-export const changeName = username => axios.patch('/api/users/change/username', { username })
-export const changePassword = password => axios.patch('/api/users/change/password', { password })
-export const leave = password => axios.post('/api/users/leave', { password })
+export const changeName = username => axios.patch('/users/change/username', { username })
+export const changePassword = password => axios.patch('/users/change/password', { password })
+export const leave = password => axios.post('/users/leave', { password })
