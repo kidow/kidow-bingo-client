@@ -7,7 +7,7 @@ const BingoWrapper = ({
 }) => {
   return (
     <>
-      <div className='ads'>광고</div>
+      {/* <div className='ads'>광고</div> */}
       <div className='bingo-wrapper'>
         {bingoIndex < 25 ? (
           <BingoChoice onClick={onYesClick}>예</BingoChoice>
@@ -30,7 +30,7 @@ const BingoWrapper = ({
           <BingoChoice onClick={() => window.location.href = '/'}>홈으로 가기</BingoChoice>
         )}
       </div>
-      <div className='ads'>광고</div>
+      {/* <div className='ads'>광고</div> */}
     </>
   );
 };

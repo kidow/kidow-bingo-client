@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import * as userActions from 'store/user'
 import * as postActions from 'store/post'
 
+import isLength from 'validator/lib/isLength'
+
 class NewPostContainer extends Component {
   handleChange = e => {
     const { PostActions } = this.props
@@ -17,6 +19,23 @@ class NewPostContainer extends Component {
     const { PostActions } = this.props
     const { name, value } = e.target
     PostActions.changeBingoInput({name, value})
+  }
+
+  handleUploadClick = () => {
+    const upload = document.createElement('input');
+    upload.type = 'file';
+    upload.onchange = () => {
+      if (!upload.files) return;
+      const file = upload.files[0];
+      this.uploadImage(file);
+    };
+    upload.click();
+  };
+
+  uploadImage = async file => {
+    if (!file) return
+    if (file.size > 1024 * 1024 * 10) return;
+    console.log('file :', file)
   }
 
   handlePost = async () => {
@@ -42,7 +61,13 @@ class NewPostContainer extends Component {
         return
     }
 
-    
+    if (!isLength(title, { max: 20 }) 
+      || !isLength(description, { max: 20 })
+      || !isLength(oneBingo, { max: 20 })
+      || !isLength(threeBingo, { max: 20 })) {
+      PostActions.setError('20자 이내로 작성해주세요')
+      return
+    }
 
     try {
       await PostActions.writePost({
@@ -56,7 +81,7 @@ class NewPostContainer extends Component {
 
   render() {
     const { logged, write } = this.props
-    const { handleChange, handlePost, handleBingoChange } = this
+    const { handleChange, handlePost, handleBingoChange, handleUploadClick } = this
     const { 
       cell11, cell12, cell13, cell14, cell15,
       cell21, cell22, cell23, cell24, cell25,
@@ -69,6 +94,7 @@ class NewPostContainer extends Component {
       <NewPost 
         logged={logged}
         onChange={handleChange}
+        onUploadClick={handleUploadClick}
         onBingoChange={handleBingoChange}
         title={title}
         description={description}

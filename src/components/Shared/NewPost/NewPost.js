@@ -8,7 +8,9 @@ const NewPost = ({
   cell31, cell32, cell33, cell34, cell35,
   cell41, cell42, cell43, cell44, cell45,
   cell51, cell52, cell53, cell54, cell55,
-  logged, title, description, oneBingo, twoBingo, threeBingo, onChange, error, onClick, onBingoChange
+  logged, title, description, oneBingo, twoBingo, 
+  threeBingo, onChange, error, onClick, onBingoChange,
+  onUploadClick
 }) => {
   return (
     <div className='new-post'>
@@ -77,7 +79,7 @@ const NewPost = ({
           name='threeBingo'
           onChange={onChange}
         />
-        <Input type='file' name='파일'/>
+        <Button onClick={onUploadClick}>메인 이미지 업로드</Button>
         {error && <Error>{error}</Error>}
         <Button onClick={onClick}>완성하기</Button>
       </div>

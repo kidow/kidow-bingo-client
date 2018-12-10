@@ -6,11 +6,17 @@ import * as api from 'lib/api/posts'
 const CHANGE_INPUT = 'post/CHANGE_INPUT'
 const CHANGE_BINGO_INPUT = 'post/CHANGE_BINGO_INPUT'
 const WRITE_POST = 'post/WRITE_POST'
+const UPDATE_POST = 'posts/UPDATE_POST'
+const REMOVE_POST = 'posts/REMOVE_POST'
+
 const SET_ERROR = 'post/SET_ERROR'
 
 export const changeInput = createAction(CHANGE_INPUT)
 export const changeBingoInput = createAction(CHANGE_BINGO_INPUT)
 export const writePost = createAction(WRITE_POST, api.write)
+export const updatePost = createAction(UPDATE_POST, api.update)
+export const removePost = createAction(REMOVE_POST, api.remove, payload => payload)
+
 export const setError = createAction(SET_ERROR)
 
 const initialState = Map({

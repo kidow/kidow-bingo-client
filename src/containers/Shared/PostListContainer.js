@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as postsActions from 'store/posts'
 import * as modalActions from 'store/modal'
+import * as postActions from 'store/post'
 
 import { setRelayoutHandler } from 'lib/withRelayout'
 
@@ -92,8 +93,8 @@ class PostListContainer extends Component {
   }
 
   handleRemovePost = postId => {
-    const { PostsActions } = this.props
-    PostsActions.removePost(postId)
+    const { PostActions } = this.props
+    PostActions.removePost(postId)
     window.location.reload()
   }
 
@@ -163,6 +164,7 @@ export default connect(
   }),
   dispatch => ({
     PostsActions: bindActionCreators(postsActions, dispatch),
+    PostActions: bindActionCreators(postActions, dispatch),
     ModalActions: bindActionCreators(modalActions, dispatch)
   })
 )(PostListContainer);

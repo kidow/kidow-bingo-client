@@ -16,9 +16,6 @@ const TOGGLE_SHARE = 'posts/TOGGLE_SHARE'
 const CHANGE_COMMENT_INPUT = 'posts/CHANGE_COMMENT_INPUT'
 const COMMENT = 'posts/COMMENT'
 
-const UPDATE_POST = 'posts/UPDATE_POST'
-const REMOVE_POST = 'posts/REMOVE_POST'
-
 const CHANGE_SEARCH_BAR_INPUT = 'posts/CHANGE_SEARCH_BAR_INPUT'
 const SEARCH_POST = 'posts/SEARCH_POST'
 
@@ -33,9 +30,6 @@ export const toggleComment = createAction(TOGGLE_COMMENT)
 export const toggleShare = createAction(TOGGLE_SHARE)
 export const changeCommentInput = createAction(CHANGE_COMMENT_INPUT)
 export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId)
-
-export const updatePost = createAction(UPDATE_POST, api.update)
-export const removePost = createAction(REMOVE_POST, api.remove, payload => payload)
 
 export const changeSearchBarInput = createAction(CHANGE_SEARCH_BAR_INPUT)
 export const searchPost = createAction(SEARCH_POST, api.search)
@@ -141,9 +135,6 @@ export default handleActions({
       const index = state.get('data').findIndex(post => post.get('_id') === action.meta)
       return state.setIn(['data', index, 'comments'], fromJS(action.payload.data))
     }
-  }),
-  ...pender({
-    type: UPDATE_POST
   }),
   [CHANGE_SEARCH_BAR_INPUT]: (state, action) => {
     return state.set('search', action.payload)

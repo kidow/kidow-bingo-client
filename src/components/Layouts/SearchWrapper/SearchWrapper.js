@@ -7,7 +7,7 @@ const SearchWrapper = ({username}) => {
   return (
     <div className='search-wrapper'>
       <NavBarContainer username={username}/>
-      <SearchBarContainer />
+      <SearchBarContainer username={username}/>
     </div>
   );
 };

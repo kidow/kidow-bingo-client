@@ -3,7 +3,7 @@
 @import '~lib/styles/utils';
 
 .post-item {
-  width: 230px;
+  width: 225px;
   @include media("<desktop") { width: calc(100% - 10px) / 3 }
   @include media("<phone") { width: 230px }
   background: white;

@@ -13,7 +13,8 @@ class SearchBarContainer extends Component {
   }
 
   handleSearch = async () => {
-    const { PostsActions, search } = this.props
+    const { PostsActions, search, username } = this.props
+    console.log('username :', username)
     try {
       PostsActions.searchPost(search)
     } catch (e) {

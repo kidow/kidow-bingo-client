@@ -10,6 +10,7 @@
   outline: none;
   color: $oc-gray-8;
   resize: none;
+  background: transparent;
 }
 
 @mixin column {
@@ -20,13 +21,13 @@
 }
 
 @mixin row {
-  background: white;
   div {
     @include column
   }
 }
 
 .table {
+  background: white;
   @include row;
   @include shadow(2);
 }
