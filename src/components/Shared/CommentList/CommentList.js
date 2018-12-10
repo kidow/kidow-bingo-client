@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentItem from '../CommentItem';
-import withRelayout from 'lib/withRelayout'
+import withRelayout from 'lib/hoc/withRelayout'
 import './CommentList.scss'
 
 class CommentList extends Component {

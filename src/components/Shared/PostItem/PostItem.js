@@ -3,7 +3,7 @@ import './PostItem.scss'
 import PostFooter from '../PostFooter';
 import { Link } from 'react-router-dom'
 import CommentBlockContainer from 'containers/Shared/CommentBlockContainer';
-import scuize from 'lib/scuize'
+import withScuize from 'lib/hoc/withScuize'
 import ShareBlockContainer from 'containers/Shared/ShareBlockContainer';
 import PostModalContainer from 'containers/Shared/PostModalContainer';
 
@@ -45,6 +45,6 @@ const PostItem = ({
   );
 };
 
-export default scuize(PostItem, function (nextProps, nextState) {
+export default withScuize(PostItem, function (nextProps, nextState) {
   return this.props.post !== nextProps.post
 });

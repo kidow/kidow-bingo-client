@@ -8,7 +8,7 @@ import * as postsActions from 'store/posts'
 import * as modalActions from 'store/modal'
 import * as postActions from 'store/post'
 
-import { setRelayoutHandler } from 'lib/withRelayout'
+import { setRelayoutHandler } from 'lib/hoc/withRelayout'
 
 class PostListContainer extends Component {
   prev = null
