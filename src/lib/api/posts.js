@@ -20,3 +20,5 @@ export const update = ({
   bingo, title, description, oneBingo, twoBingo, threeBingo, postId
 })
 export const remove = postId => axios.post(`/api/posts/${postId}/delete`)
+
+export const search = title => axios.get(`/api/posts/search/${title}`)

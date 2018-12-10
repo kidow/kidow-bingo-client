@@ -14,16 +14,6 @@ class PostModalContainer extends Component {
     })
   }
 
-  handleDelete = async () => {
-    const { PostsActions } = this.props
-
-    try {
-      
-    } catch (e) {
-      
-    }
-  }
-
   render() {
     const { isOpen, onRemovePost } = this.props
     const { handleRequestClose } = this

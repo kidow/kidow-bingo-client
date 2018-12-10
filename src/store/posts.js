@@ -19,6 +19,9 @@ const COMMENT = 'posts/COMMENT'
 const UPDATE_POST = 'posts/UPDATE_POST'
 const REMOVE_POST = 'posts/REMOVE_POST'
 
+const CHANGE_SEARCH_BAR_INPUT = 'posts/CHANGE_SEARCH_BAR_INPUT'
+const SEARCH_POST = 'posts/SEARCH_POST'
+
 export const loadPost = createAction(LOAD_POST, api.list)
 export const prefetchPost = createAction(PREFETCH_POST, api.next)
 export const showPrefetchedPost = createAction(SHOW_PREFETCHED_POST)
@@ -34,6 +37,9 @@ export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId
 export const updatePost = createAction(UPDATE_POST, api.update)
 export const removePost = createAction(REMOVE_POST, api.remove, payload => payload)
 
+export const changeSearchBarInput = createAction(CHANGE_SEARCH_BAR_INPUT)
+export const searchPost = createAction(SEARCH_POST, api.search)
+
 const initialState = Map({
   next: '',
   data: List(),
@@ -48,7 +54,8 @@ const initialState = Map({
     _postId: Map({
       visible: false
     })
-  })
+  }),
+  search: ''
 })
 
 export default handleActions({
@@ -138,11 +145,16 @@ export default handleActions({
   ...pender({
     type: UPDATE_POST
   }),
-  // ...pender({
-  //   type: REMOVE_POST,
-  //   onPending: (state, action) => {
-  //     const index = state.get('data').findIndex(post => post.get('_id') === action.meta)
-  //     return 
-  //   }
-  // })
-}, initialState) 
+  [CHANGE_SEARCH_BAR_INPUT]: (state, action) => {
+    return state.set('search', action.payload)
+  },
+  ...pender({
+    type: SEARCH_POST,
+    onSuccess: (state, action) => {
+      const { next, data } = action.payload.data
+      return state.set('next', next)
+                  .set('data', fromJS(data))
+                  .set('search', '')
+    }
+  })
+}, initialState)
