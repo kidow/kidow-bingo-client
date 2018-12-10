@@ -3,6 +3,7 @@ import user from './user'
 import post from './post'
 import posts from './posts'
 import bingo from './bingo'
+import modal from './modal'
 
 import { combineReducers } from 'redux'
 import { penderReducer } from 'redux-pender'
@@ -13,5 +14,6 @@ export default combineReducers({
   post,
   posts,
   bingo,
+  modal,
   pender: penderReducer
 })

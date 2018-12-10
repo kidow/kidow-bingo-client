@@ -13,3 +13,10 @@ export const like = postId => axios.post(`/api/posts/${postId}/likes`)
 export const dislike = postId => axios.delete(`/api/posts/${postId}/likes`)
 
 export const comment = ({postId, text}) => axios.post(`api/comments/${postId}/comments`, {text})
+
+export const update = ({
+  bingo, title, description, oneBingo, twoBingo, threeBingo, postId
+}) => axios.patch(`/api/posts/${postId}/update`, {
+  bingo, title, description, oneBingo, twoBingo, threeBingo, postId
+})
+export const remove = postId => axios.post(`/api/posts/${postId}/delete`)

@@ -9,6 +9,8 @@ import * as UserActions from 'store/user'
 import storage from 'lib/storage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
+import PostModalContainer from 'containers/Shared/PostModalContainer';
+import UserModalContainer from 'containers/User/UserModalContainer';
 
 class App extends Component {
   initializeUserInfo = async () => {
@@ -41,6 +43,8 @@ class App extends Component {
           <Route component={NotFound} />
         </Switch>
         <ToastContainer style={{ zIndex: 20 }} hideProgressBar position='bottom-right' />
+        <UserModalContainer />
+        <PostModalContainer />
       </>
     );
   }

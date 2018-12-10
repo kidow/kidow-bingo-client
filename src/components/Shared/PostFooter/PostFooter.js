@@ -10,7 +10,8 @@ const PostFooter = ({
   onToggleLike, 
   onCommentClick, 
   onShareClick, 
-  username
+  username,
+  onDeleteModal
 }) => {
   return (
     <div className='post-footer'>
@@ -31,8 +32,8 @@ const PostFooter = ({
       <div className='comments' >
         {username ? (
           <>
-            <IoIosTrash className='svg'/>
-            <span className='svg'>삭제</span>
+            <IoIosTrash className='svg' onClick={onDeleteModal}/>
+            <span className='svg' onClick={onDeleteModal}>삭제</span>
           </>
         ) : (
           <>

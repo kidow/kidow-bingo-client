@@ -16,6 +16,9 @@ const TOGGLE_SHARE = 'posts/TOGGLE_SHARE'
 const CHANGE_COMMENT_INPUT = 'posts/CHANGE_COMMENT_INPUT'
 const COMMENT = 'posts/COMMENT'
 
+const UPDATE = 'posts/UPDATE'
+const REMOVE = 'posts/REMOVE'
+
 export const loadPost = createAction(LOAD_POST, api.list)
 export const prefetchPost = createAction(PREFETCH_POST, api.next)
 export const showPrefetchedPost = createAction(SHOW_PREFETCHED_POST)
@@ -27,6 +30,9 @@ export const toggleComment = createAction(TOGGLE_COMMENT)
 export const toggleShare = createAction(TOGGLE_SHARE)
 export const changeCommentInput = createAction(CHANGE_COMMENT_INPUT)
 export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId)
+
+export const update = createAction(UPDATE, api.update)
+export const remove = createAction(REMOVE, api.remove)
 
 const initialState = Map({
   next: '',

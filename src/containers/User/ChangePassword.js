@@ -4,6 +4,7 @@ import { Content, Input, Button, SwitchLink, Error } from 'components/Base';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as userActions from 'store/user'
+import * as modalActions from 'store/modal'
 
 import isLength from 'validator/lib/isLength'
 import storage from 'lib/storage'
@@ -53,7 +54,7 @@ class ChangePassword extends Component {
   }
 
   handleLeave = async () => {
-    const { UserActions, form, history } = this.props
+    const { ModalActions, form } = this.props
     const { password, passwordConfirm } = form.toJS()
 
     if (!isLength(password, { min: 6 })) {
@@ -67,9 +68,10 @@ class ChangePassword extends Component {
     }
 
     try {
-      await UserActions.leave(password)
-      // storage.remove('loggedInfo')
-      // history.push('/')
+      await ModalActions.toggleModal({
+        form: 'user',
+        boolean: true
+      })
     } catch (e) {
       console.log(e)
       this.setError('알 수 없는 오류가 발생했습니다')
@@ -130,6 +132,7 @@ export default connect(
     loggedInfo: state.user.get('loggedInfo')
   }),
   dispatch => ({
-    UserActions: bindActionCreators(userActions, dispatch)
+    UserActions: bindActionCreators(userActions, dispatch),
+    ModalActions: bindActionCreators(modalActions, dispatch)
   })
 )(ChangePassword);

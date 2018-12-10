@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions'
 import { Map } from 'immutable'
 import { pender } from 'redux-pender'
-import * as api from 'lib/api/auth'
+import * as api from 'lib/api/user'
 
 const LOGOUT = 'user/LOGOUT'
 
@@ -94,9 +94,5 @@ export default handleActions({
       const { data: password } = action.payload
       return state.setIn(['loggedInfo', 'password'], password)
     }
-  }),
-  // ...pender({
-  //   type: LEAVE,
-  //   onSuccess: (state, action) => initialState
-  // })
+  })
 }, initialState)

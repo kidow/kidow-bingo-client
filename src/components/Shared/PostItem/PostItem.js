@@ -6,7 +6,14 @@ import CommentBlockContainer from 'containers/Shared/CommentBlockContainer';
 import scuize from 'lib/scuize'
 import ShareBlockContainer from 'containers/Shared/ShareBlockContainer';
 
-const PostItem = ({post, onToggleLike, onCommentClick, onShareClick, username}) => {
+const PostItem = ({
+  post, 
+  onToggleLike, 
+  onCommentClick, 
+  onShareClick, 
+  username,
+  onDeleteModal
+}) => {
   const { _id, title, description, liked, likesCount, comments } = post.toJS()
   const toggleLike = () => onToggleLike({
     postId: _id,
@@ -26,6 +33,7 @@ const PostItem = ({post, onToggleLike, onCommentClick, onShareClick, username}) 
         onCommentClick={commentClick}
         onShareClick={shareClick}
         username={username}
+        onDeleteModal={onDeleteModal}
       />
       <ShareBlockContainer post={post} _id={_id}/>
       <CommentBlockContainer post={post}/>

@@ -5,6 +5,7 @@ import { Spinner } from 'components/Base';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as postsActions from 'store/posts'
+import * as modalActions from 'store/modal'
 
 import { setRelayoutHandler } from 'lib/withRelayout'
 
@@ -85,6 +86,18 @@ class PostListContainer extends Component {
       window.location.href = '/'
     }
   }
+
+  handleUpdate = () => {
+    
+  }
+
+  handleDeleteModal = () => {
+    const { ModalActions } = this.props
+    ModalActions.toggleModal({
+      form: 'post',
+      boolean: true
+    })
+  }
   
   componentDidMount() {
     this.load()
@@ -105,7 +118,7 @@ class PostListContainer extends Component {
   
   render() {
     const { loading, data, username } = this.props
-    const { handleToggleLike, handleCommentClick, handleShareClick } = this
+    const { handleToggleLike, handleCommentClick, handleShareClick, handleDeleteModal } = this
     return (
       <>
         {loading ? (
@@ -118,6 +131,7 @@ class PostListContainer extends Component {
             onCommentClick={handleCommentClick}
             onShareClick={handleShareClick}
             username={username}
+            onDeleteModal={handleDeleteModal}
           />
         )}
       </>
@@ -135,6 +149,7 @@ export default connect(
     loggedInfo: state.user.get('loggedInfo')
   }),
   dispatch => ({
-    PostsActions: bindActionCreators(postsActions, dispatch)
+    PostsActions: bindActionCreators(postsActions, dispatch),
+    ModalActions: bindActionCreators(modalActions, dispatch)
   })
 )(PostListContainer);
