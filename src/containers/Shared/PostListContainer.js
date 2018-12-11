@@ -92,10 +92,14 @@ class PostListContainer extends Component {
     
   }
 
-  handleRemovePost = postId => {
+  handleRemovePost = async postId => {
     const { PostActions } = this.props
-    PostActions.removePost(postId)
-    window.location.reload()
+    try {
+      await PostActions.removePost(postId)
+      window.location.reload()
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   handleDeleteModal = () => {

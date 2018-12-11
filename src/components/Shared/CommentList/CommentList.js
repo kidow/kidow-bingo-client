@@ -25,7 +25,12 @@ class CommentList extends Component {
       <div className='comment-list'>
         {commentList}
         {limit < comments.size &&
-          <div onClick={handleReadMore} className='read-more'>{comments.size - limit > 10 ? 10 : comments.size - limit}개 더 보기</div>
+          <div 
+            onClick={handleReadMore} 
+            className='read-more'
+          >
+            {comments.size - limit > 10 ? 10 : comments.size - limit}개 더 보기
+          </div>
         }
       </div>
     );
