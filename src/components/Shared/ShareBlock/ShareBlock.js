@@ -7,12 +7,12 @@ const ShareBlock = ({_id}) => {
   return (
     <div className='share-block'>
       <div className='share'>
-        <CopyToClipboard text={`${window.location.href}post/${_id}`}>
+        <CopyToClipboard text={`${window.location.origin}/post/${_id}`}>
           <IoIosCopy className='svg' />
         </CopyToClipboard>
         <input 
           disabled
-          value={`${window.location.href}post/${_id}`}
+          value={`${window.location.origin}/post/${_id}`}
         />
       </div>
     </div>

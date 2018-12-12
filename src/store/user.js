@@ -34,7 +34,6 @@ export const setError = createAction(SET_ERROR)
 const initialState = Map({
   loggedInfo: Map({
     username: '',
-    password: ''
   }),
   logged: false,
   validated: false,

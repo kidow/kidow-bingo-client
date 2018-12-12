@@ -42,10 +42,7 @@ class NewPostContainer extends Component {
     const { PostActions, write } = this.props
     const { bingo, title, description, oneBingo, twoBingo, threeBingo } = write.toJS()
 
-    const bingoArray = Object.values(bingo)
-    bingoArray.every(item => item.length > 0)
-
-    if (!bingoArray.every(item => item.length > 0) || !title || !oneBingo || !twoBingo || !threeBingo) {
+    if (!Object.values(bingo).every(item => item.length > 0) || !title || !oneBingo || !twoBingo || !threeBingo) {
         PostActions.setError('모두 입력해주세요')
         return
     }

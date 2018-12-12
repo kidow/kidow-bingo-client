@@ -6,9 +6,10 @@ import { connect } from 'react-redux'
 
 class Posts extends React.Component {
   render() {
-    const { match, logged } = this.props
+    const { match, logged, loggedInfo, history } = this.props
     const { username } = match.params
-    if (!logged) return null
+    if (!logged) history.push('/')
+    if (username !== loggedInfo.get('username')) history.push('/')
     return (
       <PageWrapper>
         {/* <SearchWrapper username={username}/> */}
@@ -20,6 +21,7 @@ class Posts extends React.Component {
 
 export default connect(
   state => ({
-    logged: state.user.get('logged')
+    logged: state.user.get('logged'),
+    loggedInfo: state.user.get('loggedInfo')
   })
 )(Posts);

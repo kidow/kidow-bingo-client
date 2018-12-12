@@ -15,7 +15,7 @@ export const changeInput = createAction(CHANGE_INPUT)
 export const changeBingoInput = createAction(CHANGE_BINGO_INPUT)
 export const writePost = createAction(WRITE_POST, api.write)
 export const updatePost = createAction(UPDATE_POST, api.update)
-export const removePost = createAction(REMOVE_POST, api.remove, payload => payload)
+export const removePost = createAction(REMOVE_POST, api.remove)
 
 export const setError = createAction(SET_ERROR)
 
