@@ -3,7 +3,8 @@
 
 .nav-bar {
   display: flex;
-  div {
+  .link {
+    text-decoration: none;
     height: 32px;
     font-size: 0.9rem;
     color: $oc-teal-6;

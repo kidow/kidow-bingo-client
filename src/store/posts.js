@@ -19,6 +19,9 @@ const COMMENT = 'posts/COMMENT'
 const CHANGE_SEARCH_BAR_INPUT = 'posts/CHANGE_SEARCH_BAR_INPUT'
 const SEARCH_POST = 'posts/SEARCH_POST'
 
+const LOAD_POPULAR_POST = 'posts/LOAD_POPULAR_POST'
+const PREFETCH_POPULAR_POST = 'posts/PREFETCH_POPULAR_POST'
+
 export const loadPost = createAction(LOAD_POST, api.list)
 export const prefetchPost = createAction(PREFETCH_POST, api.next)
 export const showPrefetchedPost = createAction(SHOW_PREFETCHED_POST)
@@ -33,6 +36,9 @@ export const comment = createAction(COMMENT, api.comment, ({ postId }) => postId
 
 export const changeSearchBarInput = createAction(CHANGE_SEARCH_BAR_INPUT)
 export const searchPost = createAction(SEARCH_POST, api.search)
+
+export const loadPopularPost = createAction(LOAD_POPULAR_POST, api.getPopular)
+export const prefetchPopularPost = createAction(PREFETCH_POPULAR_POST, api.nextPopular)
 
 const initialState = Map({
   next: '',
@@ -146,6 +152,22 @@ export default handleActions({
       return state.set('next', next)
                   .set('data', fromJS(data))
                   .set('search', '')
+    }
+  }),
+  ...pender({
+    type: LOAD_POPULAR_POST,
+    onSuccess: (state, action) => {
+      const { next, data } = action.payload.data
+      return state.set('next', next)
+                  .set('data', fromJS(data))
+    }
+  }),
+  ...pender({
+    type: PREFETCH_POPULAR_POST,
+    onSuccess: (state, action) => {
+      const { next, data } = action.payload.data
+      return state.set('next', next)
+                  .set('nextData', fromJS(data))
     }
   })
 }, initialState)

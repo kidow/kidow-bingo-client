@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { PageWrapper, SearchWrapper } from 'components/Layouts';
-import PostListContainer from 'containers/Shared/PostListContainer';
+import PopularListContainer from 'containers/Shared/PopularListContainer';
 
 import { connect } from 'react-redux'
 
-class Posts extends React.Component {
-  render() {
+class MyPopular extends Component {
+  render () {
     const { match, logged, loggedInfo, history } = this.props
     const { username } = match.params
     if (!logged) history.push('/')
@@ -13,7 +13,7 @@ class Posts extends React.Component {
     return (
       <PageWrapper>
         {/* <SearchWrapper username={username}/> */}
-        <PostListContainer username={username} />
+        <PopularListContainer username={username}/>
       </PageWrapper>
     );
   }
@@ -24,4 +24,4 @@ export default connect(
     logged: state.user.get('logged'),
     loggedInfo: state.user.get('loggedInfo')
   })
-)(Posts);
+)(MyPopular);

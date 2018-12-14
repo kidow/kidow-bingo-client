@@ -1,0 +1,52 @@
+@import '~lib/styles/modules';
+@import '~lib/styles/shadow';
+@import '~lib/styles/utils';
+
+.popular-item {
+  width: 225px;
+  @include media("<desktop") { width: calc(100% - 10px) / 3 }
+  @include media("<phone") { width: 230px }
+  background: white;
+  @include shadow(0);
+  margin-bottom: 1rem;
+  &:hover {
+    @include shadow(1);
+    transform: scale(1.05);
+    transition: all .2s;
+  }
+  .title-image {
+    background-image: url('');
+    display: block;
+    background: $oc-gray-0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $oc-gray-3;
+    cursor: pointer;
+    height: 225px;
+  }
+  .item-title {
+    padding: 1rem;
+    display: block;
+    color: $oc-gray-7;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      color: $oc-teal-7;
+    }
+    &:active {
+      color: $oc-teal-9;
+    }
+  }
+  .description {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: $oc-gray-7;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+}

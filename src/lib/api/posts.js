@@ -22,3 +22,6 @@ export const update = ({
 export const remove = postId => axios.post(`/posts/${postId}/delete`)
 
 export const search = title => axios.get(`/posts/search/${title}`)
+
+export const getPopular = username => axios.get('/posts/popular' + (username ? `?username=${username}` : ''))
+export const nextPopular = url => axios.get(url)

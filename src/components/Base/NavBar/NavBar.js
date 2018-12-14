@@ -1,15 +1,16 @@
 import React from 'react';
 import './NavBar.scss'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({onLoad}) => {
   return (
     <div className='nav-bar'>
-      <div className='popularity'>
+      <Link to='/popular' className='link'>
         인기순
-      </div>
-      <div className='latest' onClick={onLoad}>
+      </Link>
+      <Link to='/' className='link' onClick={onLoad}>
         최신순
-      </div>
+      </Link>
     </div>
   );
 };
